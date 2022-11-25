@@ -1,7 +1,7 @@
 # Личный проект «Мишка» 
 
 * Студент: [Алла Грудко](https://up.htmlacademy.ru/adaptive/27/user/2156369).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Ефимов](https://htmlacademy.ru/profile/efiand).
 
 ---
 
