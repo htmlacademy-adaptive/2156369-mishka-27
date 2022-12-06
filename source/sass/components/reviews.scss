@@ -1,0 +1,36 @@
+@use "../global/bootstrap.scss";
+
+.reviews {
+  padding: 29px 30px 45px 30px;
+}
+
+.reviews__title {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.reviews__text {
+  margin: 0;
+  margin-bottom: 33px;
+  font-size: 15px;
+  line-height: 30px;
+  color: bootstrap.$black-light;
+}
+
+.reviews__author {
+  margin: 0;
+  font-weight: 700;
+}
+
+.reviews__contact {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.reviews__link {
+  line-height: 30px;
+  color: bootstrap.$black-light;
+}

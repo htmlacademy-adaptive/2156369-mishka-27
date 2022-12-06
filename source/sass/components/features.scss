@@ -1,0 +1,21 @@
+@use "../global/bootstrap.scss";
+
+.features {
+  @include bootstrap.list-reset;
+}
+
+.features__link {
+  display: block;
+  padding: 24px 110px 31px 30px;
+  color: bootstrap.$white;
+  font-size: 19px;
+  font-weight: 700;
+
+  &--primary {
+    background-color: bootstrap.$turquoise;
+  }
+
+  &--secondary {
+    background-color: bootstrap.$turquoise-dark;
+  }
+}

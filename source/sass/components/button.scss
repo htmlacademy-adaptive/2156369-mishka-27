@@ -1,0 +1,33 @@
+@use "../global/bootstrap.scss";
+
+.button {
+  display: block;
+  padding: 16px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  font-family: inherit;
+  color: bootstrap.$black-light;
+  background-color: bootstrap.$white;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid bootstrap.$black-light;
+
+  &:hover {
+    background-color: bootstrap.$black-light;
+    color: bootstrap.$white;
+  }
+
+  &:active {
+    background-color: bootstrap.$black-light;
+    color: rgba(bootstrap.$white, 0.3);
+  }
+
+  &--primary {
+    padding: 18px 67px 18px 68px;
+    color: bootstrap.$white;
+    background-color: bootstrap.$turquoise;
+    border: none;
+    cursor: pointer;
+  }
+}
