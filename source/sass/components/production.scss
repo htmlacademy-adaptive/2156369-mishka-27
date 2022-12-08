@@ -1,0 +1,25 @@
+@use "../global/bootstrap.scss";
+
+.production {
+  padding: 15px 30px 58px;
+}
+
+.production__wrapper {
+  background-color: bootstrap.$white;
+  border: 1px solid bootstrap.$silver;
+}
+
+.production__title {
+  margin: 21px 13px 26px 91px;
+  font-size: bootstrap.$font-size;
+}
+
+.production__description {
+  margin: 35px 34px 41px 30px;
+  color: bootstrap.$black-light;
+  font-size: 13px;
+}
+
+.production__button {
+  margin: 0 33px 34px 33px;
+}

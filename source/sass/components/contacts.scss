@@ -1,0 +1,45 @@
+@use "../global/bootstrap.scss";
+
+.contacts {
+  padding: 38px 30px 39px 29px;
+  font-size: 14px;
+  line-height: 30px;
+  color: bootstrap.$black-light;
+}
+
+.contacts__wrapper {
+  margin-bottom: 62px;
+}
+
+.contacts__title {
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+  color: bootstrap.$black;
+}
+
+.contacts__email {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+
+  &::after {
+    position: absolute;
+    height: 1px;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    background-color: bootstrap.$turquoise-check;
+    content: "";
+  }
+
+  &:hover {
+    color: bootstrap.$turquoise-link;
+  }
+}
+
+.contacts__map {
+  margin-bottom: 42px;
+}

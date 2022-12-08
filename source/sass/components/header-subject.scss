@@ -1,0 +1,13 @@
+@use "../global/bootstrap.scss";
+
+.header-subject {
+  background-color: bootstrap.$gray;
+  padding: 73px 41px;
+  text-align: center;
+}
+
+.header-subject__title {
+  font-size: 27px;
+  line-height: 30px;
+  font-weight: 700;
+}

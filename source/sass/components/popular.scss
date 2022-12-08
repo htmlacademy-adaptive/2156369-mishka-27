@@ -1,0 +1,45 @@
+@use "../global/bootstrap.scss";
+
+.popular {
+  padding: 31px 30px 36px;
+}
+
+.popular__title {
+  margin: 0;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.popular__subtitle {
+  margin: 0;
+  margin-bottom: 17px;
+  line-height: 20px;
+  font-weight: 700;
+  color: bootstrap.$turquoise;
+  text-transform: uppercase;
+}
+
+.popular__description {
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: bootstrap.$black-light;
+}
+
+.popular__list {
+  margin: 0;
+  margin-bottom: 28px;
+}
+
+.popular__image {
+  margin-bottom: 26px;
+}
+
+.popular__price {
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: bootstrap.$black-light;
+  text-align: center;
+}

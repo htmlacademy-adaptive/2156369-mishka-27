@@ -1,0 +1,15 @@
+@use "../global/bootstrap.scss";
+
+.hero {
+  min-height: 400px;
+  background: bootstrap.$gray url("../../img/hero-bg.jpg") no-repeat center top;
+}
+
+.hero__title {
+  margin: 0;
+  padding: 80px 30px 120px;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+@use "../global/bootstrap.scss";
+
+.page {
+  height: 100%;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+  margin: 0;
+  font-family: bootstrap.$font-family;
+  color: bootstrap.$black;
+  font-size: bootstrap.$font-size;
+  line-height: bootstrap.$line-height;
+}

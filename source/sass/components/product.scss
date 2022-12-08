@@ -1,0 +1,51 @@
+@use "../global/bootstrap.scss";
+
+.product {
+  padding: 30px 30px 15px;
+}
+
+.product__list {
+  @include bootstrap.list-reset;
+}
+
+.product__item {
+  border: 1px solid bootstrap.$silver;
+}
+
+.product__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.product__content {
+  padding: 27px 28px 26px;
+}
+
+.product__link {
+  color: inherit;
+}
+
+.product__title {
+  margin: 0;
+  margin-bottom: 6px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.product__description {
+  margin: 0;
+  margin-bottom: 17px;
+  color: bootstrap.$black-light;
+  font-size: 13px;
+  line-height: 30px;
+}
+
+.product__order {
+  padding-top: 22px;
+  border-top: 1px solid bootstrap.$silver;
+}
+
+.product__price {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}

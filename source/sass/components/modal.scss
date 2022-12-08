@@ -1,0 +1,22 @@
+@use "../global/bootstrap.scss";
+
+.modal__wrapper {
+  padding: 28px 30px 46px;
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal__text {
+  margin: 0;
+  margin-bottom: 21px;
+  font-size: 15px;
+  line-height: 30px;
+  color: bootstrap.$black-light;
+}

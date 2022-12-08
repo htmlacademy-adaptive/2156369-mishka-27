@@ -1,0 +1,35 @@
+@use "../global/bootstrap.scss";
+
+.form {
+  padding: 15px 30px 55px;
+}
+
+.form__group {
+  padding: 0;
+  border: none;
+  border-top: 1px solid bootstrap.$turquoise-check;
+}
+
+.form__legend {
+  padding-right: 10px;
+  line-height: 16px;
+  font-weight: 700;
+  color: bootstrap.$turquoise;
+  text-transform: uppercase;
+}
+
+.form__field::placeholder {
+  line-height: 18px;
+  opacity: 0.3;
+}
+
+.form__text {
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.form__comment {
+  font-size: 14px;
+  line-height: 16px;
+  color: bootstrap.$black-light;
+}
