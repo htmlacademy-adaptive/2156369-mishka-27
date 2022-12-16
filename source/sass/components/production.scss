@@ -1,25 +1,67 @@
-@use "../global/bootstrap.scss";
-
 .production {
   padding: 15px 30px 58px;
 }
 
 .production__wrapper {
-  background-color: bootstrap.$white;
-  border: 1px solid bootstrap.$silver;
+  background-color: $white;
+  border: 1px solid $whisper;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "img title"
+      "img text"
+      "img button";
+  }
 }
 
 .production__title {
   margin: 21px 13px 26px 91px;
-  font-size: bootstrap.$font-size;
+  font-size: $font-size;
+
+  @include tablet-desktop {
+    font-size: 20px;
+  }
+
+  @include desktop {
+    margin: 96px 110px 27px 79px;
+  }
+}
+
+.production__image {
+  @include tablet {
+    order: -1;
+  }
+
+  @include desktop {
+    grid-area: img;
+  }
 }
 
 .production__description {
   margin: 35px 34px 41px 30px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
   font-size: 13px;
+
+  @include desktop {
+    margin: 0 36px 51px 79px;
+    font-size: 15px;
+  }
 }
 
 .production__button {
-  margin: 0 33px 34px 33px;
+  margin: 0 33px 34px;
+
+  @include tablet-desktop {
+    font-size: 17px;
+  }
+
+  @include desktop {
+    margin: 0 57px 60px 80px;
+  }
 }

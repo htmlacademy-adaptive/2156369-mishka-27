@@ -1,8 +1,110 @@
-@use "../global/bootstrap.scss";
+.main-nav__wrapper {
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 0.93fr 1fr;
+    grid-template-areas: ". user"
+      "list text";
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 160px 1fr;
+    grid-template-areas: "list . user"
+      "sale text text";
+  }
+}
+
+.main-nav__toggle {
+  @include tablet-desktop {
+    display: none;
+  }
+}
 
 .main-nav__site-list,
+.main-nav__user-list,
+.main-nav__sale-new-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.main-nav__site-list {
+  @include tablet-desktop {
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: list;
+    align-items: center;
+  }
+
+  @include tablet {
+    background-color: $snow;
+
+    & .main-nav__item:not(:last-child) {
+      margin-right: 26px;
+    }
+  }
+
+  @include desktop {
+    padding-left: 15px;
+  }
+
+  &--dark {
+    @include tablet {
+      background-color: $white-smoke;
+    }
+  }
+
+  & .main-nav__item:not(:last-child) {
+    @include desktop {
+      box-shadow: 1px 0 0 $whisper;
+    }
+  }
+}
+
 .main-nav__user-list {
-  @include bootstrap.list-reset;
+  @include tablet-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: user;
+  }
+
+  @include desktop {
+    justify-self: flex-end;
+    padding-right: 50px;
+  }
+}
+
+.main-nav__sale-new-list {
+  @include mobile-tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: flex;
+    grid-area: sale;
+    padding-left: 50px;
+    background-color: $snow;
+  }
+
+  &--dark {
+    @include desktop {
+      background-color: $white-smoke;
+    }
+  }
+
+  & .main-nav__item:not(:last-child) {
+    margin-right: 45px;
+  }
+
+  & .main-nav__link {
+    padding: 20px 0;
+    min-height: 30px;
+  }
 }
 
 .main-nav__link {
@@ -11,8 +113,41 @@
   padding: 28px 20px 26px 76px;
   font-weight: 700;
   color: inherit;
-  background-color: bootstrap.$white;
-  box-shadow: 0 1px 0 bootstrap.$silver, inset 0 1px 0 bootstrap.$silver;
+  background-color: $white;
+  box-shadow: 0 1px 0 $whisper, inset 0 1px 0 $whisper;
+
+  @include tablet-desktop {
+    padding: 0;
+    min-height: 88px;
+    min-width: 84px;
+    background-color: inherit;
+    box-shadow: none;
+  }
+
+  &--icon {
+    @include tablet-desktop {
+      box-sizing: border-box;
+      box-shadow: inset 1px 0 0 $whisper;
+      padding: 33px 0 33px 83px;
+    }
+  }
+
+  &--small {
+    @include tablet {
+      font-size: 15px;
+    }
+
+    @include tablet-desktop {
+      box-sizing: border-box;
+      padding: 20px 10px 20px 0;
+      min-height: 40px;
+    }
+
+    @include desktop {
+      padding: 33px 30px 33px 35px;
+    }
+  }
+
 
   &:hover {
     opacity: 0.6;
@@ -30,4 +165,34 @@
   margin-top: auto;
   margin-bottom: auto;
   left: 40px;
+
+  @include tablet {
+    left: 32px;
+  }
+}
+
+.main-nav__text {
+  @include tablet-desktop {
+    @include visually-hidden;
+  }
+}
+
+.main-nav__delivery-text {
+  @include mobile {
+    @include visually-hidden;
+  }
+
+  @include tablet-desktop {
+    margin: 0;
+    padding: 20px 50px 20px;
+    grid-area: text;
+    text-align: end;
+    background-color: $snow;
+    font-size: 15px;
+    color: $charcoal;
+
+    &--dark {
+      background-color: $white-smoke;
+    }
+  }
 }

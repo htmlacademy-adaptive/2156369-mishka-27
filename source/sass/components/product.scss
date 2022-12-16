@@ -1,26 +1,61 @@
-@use "../global/bootstrap.scss";
-
 .product {
   padding: 30px 30px 15px;
 }
 
 .product__list {
-  @include bootstrap.list-reset;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 260px);
+    gap: 30px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .product__item {
-  border: 1px solid bootstrap.$silver;
+  @include mobile {
+    max-width: 260px;
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &:not(:last-child) {
+    @include tablet {
+      margin-bottom: 54px;
+    }
+
+    @include desktop {
+      margin-right: 51px;
+    }
+  }
 }
 
-.product__item:not(:last-child) {
-  margin-bottom: 30px;
+.product__image {
+  display: block;
 }
 
 .product__content {
   padding: 27px 28px 26px;
+  border: 1px solid $whisper;
 }
 
 .product__link {
+  margin: 0 auto;
   color: inherit;
 }
 
@@ -29,23 +64,37 @@
   margin-bottom: 6px;
   font-size: 17px;
   font-weight: 700;
+
+  @include tablet {
+    font-size: 20px;
+  }
 }
 
 .product__description {
   margin: 0;
   margin-bottom: 17px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
   font-size: 13px;
   line-height: 30px;
+
+  @include tablet {
+    font-size: 15px;
+  }
 }
 
 .product__order {
+  display: flex;
+  justify-content: space-between;
   padding-top: 22px;
-  border-top: 1px solid bootstrap.$silver;
+  border-top: 1px solid $whisper;
 }
 
 .product__price {
   margin: 0;
   font-size: 15px;
   font-weight: 700;
+
+  @include tablet {
+    font-size: 17px;
+  }
 }

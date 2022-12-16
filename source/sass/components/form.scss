@@ -1,26 +1,47 @@
-@use "../global/bootstrap.scss";
-
 .form {
   padding: 15px 30px 55px;
 }
 
 .form__group {
+  display: flex;
   padding: 0;
   border: none;
-  border-top: 1px solid bootstrap.$turquoise-check;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &:not(:last-child) {
+    @include mobile {
+      margin-bottom: 33px;
+    }
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
 }
 
 .form__legend {
   padding-right: 10px;
   line-height: 16px;
   font-weight: 700;
-  color: bootstrap.$turquoise;
+  color: $downy;
   text-transform: uppercase;
+  margin-bottom: 20px;
+
+  @include tablet-desktop {
+    display: contents;
+    width: 25%;
+  }
 }
 
-.form__field::placeholder {
-  line-height: 18px;
-  opacity: 0.3;
+.form__field {
+  &::placeholder {
+    line-height: 18px;
+    opacity: 0.3;
+  }
 }
 
 .form__text {
@@ -31,5 +52,18 @@
 .form__comment {
   font-size: 14px;
   line-height: 16px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
+}
+
+.form__submit {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include tablet-desktop {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }

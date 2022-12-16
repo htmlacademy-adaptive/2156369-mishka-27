@@ -1,17 +1,16 @@
-@use "../global/bootstrap.scss";
-
 .page {
   height: 100%;
 }
 
 .page__body {
-  display: flex;
-  flex-direction: column;
-  width: 320px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
   height: 100%;
-  margin: 0;
-  font-family: bootstrap.$font-family;
-  color: bootstrap.$black;
-  font-size: bootstrap.$font-size;
-  line-height: bootstrap.$line-height;
+  max-width: 1150px;
+  margin: 0 auto;
+  font-family: $font-family;
+  color: $black;
+  font-size: $font-size;
+  line-height: $line-height;
 }

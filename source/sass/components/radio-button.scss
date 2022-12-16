@@ -1,5 +1,3 @@
-@use "../global/bootstrap.scss";
-
 .radio-button__text {
   display: inline-block;
   padding: 18px 22px;
@@ -7,17 +5,17 @@
   min-width: 82px;
   line-height: 16px;
   font-weight: 700;
-  border: 2px solid rgba(bootstrap.$black-light, 0.1);
+  border: 2px solid rgba($charcoal, 0.1);
   text-align: center;
   cursor: pointer;
 }
 
 .radio-button__input {
   &:checked + .radio-button__text {
-    border: 2px solid bootstrap.$turquoise-check;
+    border: 2px solid $downy-dark;
   }
 
   &:hover + .radio-button__text {
-    border: 2px solid rgba(bootstrap.$black-light, 0.3);
+    border: 2px solid rgba($charcoal, 0.3);
   }
 }

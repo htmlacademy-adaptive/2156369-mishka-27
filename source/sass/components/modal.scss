@@ -1,4 +1,8 @@
-@use "../global/bootstrap.scss";
+.modal {
+  &--closed {
+    display: none;
+  }
+}
 
 .modal__wrapper {
   padding: 28px 30px 46px;
@@ -18,5 +22,5 @@
   margin-bottom: 21px;
   font-size: 15px;
   line-height: 30px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
 }

@@ -1,5 +1,11 @@
-@use "../global/bootstrap.scss";
-
 .social {
-  @include bootstrap.list-reset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 29px;
 }

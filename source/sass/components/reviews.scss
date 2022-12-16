@@ -1,7 +1,11 @@
-@use "../global/bootstrap.scss";
-
 .reviews {
-  padding: 29px 30px 45px 30px;
+  padding: 29px 30px 45px;
+
+  @include tablet-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 }
 
 .reviews__title {
@@ -10,6 +14,18 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 700;
+
+  @include tablet {
+    margin-bottom: 39px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    margin-bottom: 39px;
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 .reviews__text {
@@ -17,7 +33,19 @@
   margin-bottom: 33px;
   font-size: 15px;
   line-height: 30px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
+
+  @include tablet-desktop {
+    grid-column: 1 / -1;
+  }
+
+  @include tablet {
+    margin-bottom: 61px;
+  }
+
+  @include desktop {
+    margin-bottom: 44px;
+  }
 }
 
 .reviews__author {
@@ -28,9 +56,31 @@
 .reviews__contact {
   margin: 0;
   margin-bottom: 30px;
+
+  @include tablet-desktop {
+    margin: 0;
+  }
 }
 
 .reviews__link {
   line-height: 30px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
+}
+
+.reviews__toggles {
+  @include tablet-desktop {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+    justify-self: flex-end;
+  }
+}
+
+.reviews__button {
+  @include tablet-desktop {
+    padding: 16px 30px;
+    margin-bottom: 39px;
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
+  }
 }

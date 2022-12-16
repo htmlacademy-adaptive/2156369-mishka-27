@@ -1,21 +1,35 @@
-@use "../global/bootstrap.scss";
-
 .features {
-  @include bootstrap.list-reset;
+  padding: 0;
+  list-style-type: none;
+
+  @include tablet-desktop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
 }
 
 .features__link {
   display: block;
   padding: 24px 110px 31px 30px;
-  color: bootstrap.$white;
-  font-size: 19px;
+  color: $white;
   font-weight: 700;
 
-  &--primary {
-    background-color: bootstrap.$turquoise;
+  @include mobile {
+    font-size: 19px;
   }
 
-  &--secondary {
-    background-color: bootstrap.$turquoise-dark;
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.features__item {
+  &:first-child .features__link {
+    background-color: $downy;
+  }
+
+  &:nth-child(2) .features__link {
+    background-color: $puerto-rico-dark;
   }
 }
