@@ -99,6 +99,12 @@
 .popular__image {
   margin-bottom: 26px;
 
+  @include mobile {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   @include tablet {
     grid-area: img;
     margin: 0;

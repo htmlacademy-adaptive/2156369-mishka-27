@@ -1,5 +1,9 @@
 .form {
   padding: 15px 30px 55px;
+
+  @include tablet-desktop {
+    padding: 0;
+  }
 }
 
 .form__group {
@@ -20,21 +24,35 @@
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    padding: 50px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding: 50px 225px 50px 97px;
+  }
+
+  &--color {
+    @include tablet-desktop {
+      background-color: $white-smoke;
+    }
   }
 }
 
-.form__legend {
+.form__title {
   padding-right: 10px;
+  margin: 0;
   line-height: 16px;
   font-weight: 700;
   color: $downy;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
 
-  @include tablet-desktop {
-    display: contents;
-    width: 25%;
-  }
+.form__label-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .form__field {
@@ -47,6 +65,10 @@
 .form__text {
   line-height: 18px;
   font-weight: 700;
+
+  @include tablet-desktop {
+    font-size: 19px;
+  }
 }
 
 .form__comment {
@@ -65,5 +87,13 @@
   @include tablet-desktop {
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+
+  @include tablet {
+    padding: 0 50px;
+  }
+
+  @include desktop {
+    padding: 0 225px;
   }
 }
