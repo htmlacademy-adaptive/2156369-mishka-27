@@ -1,0 +1,34 @@
+.review__text {
+  margin: 0;
+  margin-bottom: 33px;
+  font-size: 15px;
+  line-height: 30px;
+  color: $charcoal;
+
+  @include tablet {
+    margin-bottom: 61px;
+  }
+
+  @include desktop {
+    margin-bottom: 44px;
+  }
+}
+
+.review__author {
+  margin: 0;
+  font-weight: 700;
+}
+
+.review__contact {
+  margin: 0;
+  margin-bottom: 30px;
+
+  @include tablet-desktop {
+    margin: 0;
+  }
+}
+
+.review__link {
+  line-height: 30px;
+  color: $charcoal;
+}

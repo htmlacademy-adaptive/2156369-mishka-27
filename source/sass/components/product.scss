@@ -1,5 +1,13 @@
 .product {
   padding: 30px 30px 15px;
+
+  @include tablet {
+    padding: 67px 50px 53px;
+  }
+
+  @include desktop {
+    padding: 111px 50px 57px;
+  }
 }
 
 .product__list {
@@ -19,8 +27,9 @@
   }
 
   @include desktop {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 51px;
   }
 }
 
@@ -37,10 +46,6 @@
   &:not(:last-child) {
     @include tablet {
       margin-bottom: 54px;
-    }
-
-    @include desktop {
-      margin-right: 51px;
     }
   }
 }
@@ -64,8 +69,9 @@
   margin-bottom: 6px;
   font-size: 17px;
   font-weight: 700;
+  line-height: 24px;
 
-  @include tablet {
+  @include tablet-desktop {
     font-size: 20px;
   }
 }
@@ -91,6 +97,7 @@
 
 .product__price {
   margin: 0;
+  margin-right: 25px;
   font-size: 15px;
   font-weight: 700;
 

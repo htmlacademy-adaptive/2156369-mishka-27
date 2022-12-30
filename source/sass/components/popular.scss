@@ -10,12 +10,14 @@
       "price img img"
       "button img img";
     gap: 42px;
+    padding: 40px 50px 52px;
   }
 
   @include desktop {
     display: grid;
     grid-template-columns: 175px 292px 1fr 525px;
     grid-template-rows: repeat(5, min-content);
+    padding: 54px 50px 73px;
   }
 }
 
@@ -71,7 +73,7 @@
   @include tablet {
     grid-area: description;
     margin: 0;
-    font-size: $font-size;
+    font-size: 17px;
     line-height: 30px;
   }
 
@@ -137,7 +139,7 @@
 
 .popular__button {
   @include tablet-desktop {
-    font-size: $font-size;
+    font-size: 17px;
   }
 
   @include desktop {

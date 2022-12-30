@@ -1,5 +1,16 @@
 .reviews {
+  position: relative;
   padding: 29px 30px 45px;
+
+  @include tablet {
+    padding: 82px 50px 47px;
+    gap: 38px;
+  }
+
+  @include desktop {
+    padding: 78px 50px 96px 224px;
+    gap: 35px;
+  }
 
   @include tablet-desktop {
     display: grid;
@@ -16,69 +27,47 @@
   font-weight: 700;
 
   @include tablet {
-    margin-bottom: 39px;
+    margin-bottom: 0;
     font-size: 43px;
     line-height: 50px;
   }
 
   @include desktop {
-    margin-bottom: 39px;
+    margin-bottom: 0;
     font-size: 53px;
     line-height: 57px;
   }
 }
 
-.reviews__text {
+.reviews__list {
   margin: 0;
-  margin-bottom: 33px;
-  font-size: 15px;
-  line-height: 30px;
-  color: $charcoal;
+  padding: 0;
+  list-style-type: none;
 
   @include tablet-desktop {
     grid-column: 1 / -1;
   }
-
-  @include tablet {
-    margin-bottom: 61px;
-  }
-
-  @include desktop {
-    margin-bottom: 44px;
-  }
-}
-
-.reviews__author {
-  margin: 0;
-  font-weight: 700;
-}
-
-.reviews__contact {
-  margin: 0;
-  margin-bottom: 30px;
-
-  @include tablet-desktop {
-    margin: 0;
-  }
-}
-
-.reviews__link {
-  line-height: 30px;
-  color: $charcoal;
 }
 
 .reviews__toggles {
   @include tablet-desktop {
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
-    justify-self: flex-end;
+    position: absolute;
+    right: 50px;
+  }
+
+  @include tablet {
+    bottom: 47px;
+  }
+
+  @include desktop {
+    bottom: 96px;
   }
 }
 
 .reviews__button {
   @include tablet-desktop {
     padding: 16px 30px;
-    margin-bottom: 39px;
+    margin-bottom: 0;
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     justify-self: flex-end;

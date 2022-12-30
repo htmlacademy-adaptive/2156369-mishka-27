@@ -3,15 +3,17 @@
     display: none;
   }
 
-  @include tablet {
+  @include tablet-desktop {
     display: grid;
+  }
+
+  @include tablet {
     grid-template-columns: 0.93fr 1fr;
     grid-template-areas: ". user"
       "list text";
   }
 
   @include desktop {
-    display: grid;
     grid-template-columns: 1fr 160px 1fr;
     grid-template-areas: "list . user"
       "sale text text";
@@ -24,12 +26,25 @@
   }
 }
 
+.main-nav--no-js {
+  @include mobile {
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-nav__wrapper {
+      display: block;
+    }
+  }
+}
+
 .main-nav__site-list,
 .main-nav__user-list,
 .main-nav__sale-new-list {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  align-content: flex-start;
 }
 
 .main-nav__site-list {
@@ -44,13 +59,13 @@
   @include tablet {
     background-color: $snow;
 
-    & .main-nav__item:not(:last-child) {
+    .main-nav__item:not(:last-child) {
       margin-right: 26px;
     }
   }
 
   @include desktop {
-    padding-left: 15px;
+    padding-left: calc(50% - 231px);
   }
 
   &--dark {
@@ -59,7 +74,7 @@
     }
   }
 
-  & .main-nav__item:not(:last-child) {
+  .main-nav__item:not(:last-child) {
     @include desktop {
       box-shadow: 1px 0 0 $whisper;
     }
@@ -71,11 +86,12 @@
     display: flex;
     flex-wrap: wrap;
     grid-area: user;
+    padding-right: 50px;
   }
 
   @include desktop {
     justify-self: flex-end;
-    padding-right: 50px;
+    padding-right: calc(50% - 195px);
   }
 }
 
@@ -87,8 +103,9 @@
   @include desktop {
     display: flex;
     grid-area: sale;
-    padding-left: 50px;
+    padding-left: calc(50% - 196px);
     background-color: $snow;
+    font-size: 15px;
   }
 
   &--dark {
@@ -97,11 +114,11 @@
     }
   }
 
-  & .main-nav__item:not(:last-child) {
-    margin-right: 45px;
+  .main-nav__item:not(:last-child) {
+    margin-right: 60px;
   }
 
-  & .main-nav__link {
+  .main-nav__link {
     padding: 20px 0;
     min-height: 30px;
   }
@@ -119,7 +136,7 @@
   @include tablet-desktop {
     padding: 0;
     min-height: 88px;
-    min-width: 84px;
+    min-width: 83px;
     background-color: inherit;
     box-shadow: none;
   }
@@ -129,6 +146,11 @@
       box-sizing: border-box;
       box-shadow: inset 1px 0 0 $whisper;
       padding: 33px 0 33px 83px;
+      font-size: 17px;
+    }
+
+    @include desktop {
+      padding: 33px 0 33px 86px;
     }
   }
 
@@ -141,10 +163,12 @@
       box-sizing: border-box;
       padding: 20px 10px 20px 0;
       min-height: 40px;
+      line-height: 24px;
     }
 
     @include desktop {
-      padding: 33px 30px 33px 35px;
+      padding: 33px 35px 33px 35px;
+      font-size: 17px;
     }
   }
 
@@ -171,7 +195,7 @@
   }
 }
 
-.main-nav__text {
+.main-nav__link-text {
   @include tablet-desktop {
     @include visually-hidden;
   }
@@ -194,5 +218,9 @@
     &--dark {
       background-color: $white-smoke;
     }
+  }
+
+  @include desktop {
+    padding-right: calc(50% - 277px);
   }
 }

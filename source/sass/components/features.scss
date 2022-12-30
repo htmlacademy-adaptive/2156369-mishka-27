@@ -13,6 +13,7 @@
   padding: 24px 110px 31px 30px;
   color: $white;
   font-weight: 700;
+  background-color: $downy;
 
   @include mobile {
     font-size: 19px;
@@ -25,11 +26,16 @@
 }
 
 .features__item {
-  &:first-child .features__link {
-    background-color: $downy;
+  @include mobile {
+    &:nth-child(2n) .features__link {
+      background-color: $puerto-rico-dark;
+    }
   }
 
-  &:nth-child(2) .features__link {
-    background-color: $puerto-rico-dark;
+  @include tablet-desktop {
+    &:nth-child(4n-1) .features__link,
+    &:nth-child(4n-2) .features__link {
+      background-color: $puerto-rico-dark;
+    }
   }
 }
