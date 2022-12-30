@@ -1,7 +1,8 @@
-@use "../global/bootstrap.scss";
-
 .header-subject {
-  background-color: bootstrap.$gray;
+  background-color: $white-smoke;
+}
+
+.header-subject__container {
   padding: 73px 41px;
   text-align: center;
 }
@@ -10,4 +11,14 @@
   font-size: 27px;
   line-height: 30px;
   font-weight: 700;
+
+  @include tablet {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: 57px;
+  }
 }

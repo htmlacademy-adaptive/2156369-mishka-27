@@ -1,7 +1,24 @@
-@use "../global/bootstrap.scss";
-
 .popular {
   padding: 31px 30px 36px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 50% 1fr 0.5fr;
+    grid-template-areas: "title title subtitle"
+      "description img img"
+      "list img img"
+      "price img img"
+      "button img img";
+    gap: 42px;
+    padding: 40px 50px 52px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 175px 292px 1fr 525px;
+    grid-template-rows: repeat(5, min-content);
+    padding: 54px 50px 73px;
+  }
 }
 
 .popular__title {
@@ -9,6 +26,22 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 700;
+
+  @include tablet {
+    grid-area: title;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+    margin-top: 61px;
+    margin-bottom: 35px;
+    z-index: 2;
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 .popular__subtitle {
@@ -16,30 +49,100 @@
   margin-bottom: 17px;
   line-height: 20px;
   font-weight: 700;
-  color: bootstrap.$turquoise;
+  color: $downy;
   text-transform: uppercase;
+
+  @include tablet {
+    grid-area: subtitle;
+    line-height: 17px;
+  }
+
+  @include desktop {
+    grid-column: 1 / 2;
+    margin-top: 70px;
+    line-height: 17px;
+  }
 }
 
 .popular__description {
   margin: 0;
   margin-bottom: 28px;
   font-size: 15px;
-  color: bootstrap.$black-light;
+  color: $charcoal;
+
+  @include tablet {
+    grid-area: description;
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  @include desktop {
+    grid-column: 2 / 3;
+    margin-bottom: 60px;
+  }
 }
 
 .popular__list {
   margin: 0;
   margin-bottom: 28px;
+
+  @include tablet {
+    grid-area: list;
+    margin: 0;
+  }
+
+  @include desktop {
+    grid-column: 2 / 3;
+    margin-bottom: 109px;
+  }
 }
 
 .popular__image {
   margin-bottom: 26px;
+
+  @include mobile {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include tablet {
+    grid-area: img;
+    margin: 0;
+  }
+
+  @include desktop {
+    grid-column: 4 / -1;
+    grid-row: 1 / -1;
+  }
 }
 
 .popular__price {
   margin: 0;
   margin-bottom: 24px;
   font-weight: 700;
-  color: bootstrap.$black-light;
+  color: $charcoal;
   text-align: center;
+
+  @include tablet {
+    grid-area: price;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  @include desktop {
+    grid-column: 2 / 3;
+    margin-bottom: 33px;
+  }
+}
+
+.popular__button {
+  @include tablet-desktop {
+    font-size: 17px;
+  }
+
+  @include desktop {
+    grid-column: 2 / 3;
+  }
 }

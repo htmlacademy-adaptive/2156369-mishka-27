@@ -1,3 +1,12 @@
+.copyright {
+  display: flex;
+  align-items: center;
+
+  @include tablet-desktop {
+    justify-self: end;
+  }
+}
+
 .copyright__text {
   margin-right: 27px;
   font-size: 19px;

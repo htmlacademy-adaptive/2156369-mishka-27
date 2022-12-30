@@ -1,22 +1,92 @@
-@use "../global/bootstrap.scss";
-
 .advantages {
-  padding: 31px 30px 29px 30px;
+  padding: 31px 30px 29px;
+
+  @include tablet {
+    padding: 52px 50px 83px;
+  }
+
+  @include desktop {
+    padding: 68px 225px 90px;
+  }
 }
 
 .advantages__title {
   margin: 0;
-  margin-bottom: 28px;
-  font-size: 25px;
-  line-height: 30px;
   font-weight: 700;
+
+  @include mobile {
+    margin-bottom: 28px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    margin-bottom: 41px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    margin-bottom: 39px;
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 .advantages__list {
-  @include bootstrap.list-reset;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  @include tablet-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include tablet {
+    column-gap: 70px;
+    row-gap: 63px;
+  }
+
+  @include desktop {
+    column-gap: 85px;
+    row-gap: 57px;
+  }
 }
 
 .advantages__item {
-  line-height: 20px;
   font-weight: 700;
+
+  @include mobile {
+    line-height: 20px;
+  }
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 22px;
+
+    &--flower {
+      order: 1;
+    }
+
+    &--ball {
+      order: 2;
+    }
+
+    &--money {
+      order: 3;
+    }
+
+    &--rocket {
+      order: 4;
+    }
+
+    &--heart {
+      order: 5;
+    }
+
+    &--box {
+      order: 6;
+    }
+  }
 }

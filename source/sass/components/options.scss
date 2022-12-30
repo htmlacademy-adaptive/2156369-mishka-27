@@ -1,9 +1,7 @@
-@use "../global/bootstrap.scss";
-
 .options__item {
   padding: 5px 0;
   font-size: 15px;
   line-height: 20px;
-  color: bootstrap.$black-light;
-  border-bottom: 1px solid bootstrap.$silver;
+  color: $charcoal;
+  border-bottom: 1px solid $whisper;
 }

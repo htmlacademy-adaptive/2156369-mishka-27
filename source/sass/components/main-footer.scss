@@ -1,6 +1,39 @@
-@use "../global/bootstrap.scss";
-
 .main-footer {
-  padding: 25px 30px 32px;
-  background-color: bootstrap.$gray;
+  background-color: $white-smoke;
+}
+
+.main-footer__container {
+  display: grid;
+
+  @include mobile {
+    justify-content: center;
+    padding: 25px 30px 32px;
+  }
+
+  @include tablet-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 30px;
+    padding: 50px 50px 58px;
+  }
+}
+
+.main-footer__logo {
+  @include mobile {
+    display: none;
+  }
+}
+
+.main-footer__social {
+  @include mobile {
+    margin: 25px 0 28px;
+  }
+
+  @include tablet-desktop {
+    margin: 0;
+  }
+}
+
+.main-footer__copyright {
+  margin: 0;
 }
