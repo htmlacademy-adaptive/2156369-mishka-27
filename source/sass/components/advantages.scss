@@ -1,5 +1,5 @@
 .advantages {
-  padding: 31px 30px 29px;
+  padding: 36px 30px 29px;
 
   @include tablet {
     padding: 52px 50px 83px;
@@ -58,6 +58,7 @@
   font-weight: 700;
 
   @include mobile {
+    font-size: 17px;
     line-height: 20px;
   }
 

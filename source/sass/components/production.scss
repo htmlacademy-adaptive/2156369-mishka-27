@@ -1,5 +1,5 @@
 .production {
-  padding: 15px 30px 58px;
+  padding: 15px 30px 55px;
 
   @include tablet {
     padding: 0 50px 64px;
@@ -54,7 +54,7 @@
 }
 
 .production__description {
-  margin: 35px 34px 41px 30px;
+  margin: 32px 32px 39px;
   color: $charcoal;
   font-size: 13px;
   line-height: 24px;
@@ -71,6 +71,7 @@
 
 .production__button {
   margin: 0 33px 34px;
+  padding: 15px 20px;
 
   @include tablet-desktop {
     font-size: 17px;

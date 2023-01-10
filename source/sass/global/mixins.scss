@@ -40,3 +40,9 @@
     @content;
   }
 }
+
+@mixin retina2 {
+  @media (min-resolution: 2dppx) {
+    @content;
+  }
+}

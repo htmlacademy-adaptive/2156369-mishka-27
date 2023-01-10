@@ -18,7 +18,7 @@
   @include mobile {
     display: grid;
     grid-template-columns: repeat(auto-fill, 260px);
-    gap: 30px;
+    gap: 29px;
   }
 
   @include tablet {
@@ -91,7 +91,7 @@
 .product__order {
   display: flex;
   justify-content: space-between;
-  padding-top: 22px;
+  padding-top: 25px;
   border-top: 1px solid $whisper;
 }
 

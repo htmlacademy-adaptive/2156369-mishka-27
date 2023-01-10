@@ -10,10 +10,11 @@
 
 .features__link {
   display: block;
-  padding: 24px 110px 31px 30px;
+  padding: 24px 110px 31px 31px;
   color: $white;
   font-weight: 700;
   background-color: $downy;
+  line-height: 24px;
 
   @include mobile {
     font-size: 19px;
@@ -22,6 +23,7 @@
   @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
+    padding-left: 37px;
   }
 }
 

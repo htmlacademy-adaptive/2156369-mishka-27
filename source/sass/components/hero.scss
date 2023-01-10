@@ -1,17 +1,42 @@
 .hero {
   min-height: 400px;
-  background: $snow url("../img/hero-bg.jpg") no-repeat center top;
+
+  @include mobile {
+    background: $snow url("../img/hero-bg.jpg") no-repeat center -18px;
+
+    @include retina2 {
+      background: $snow url("../img/hero-bg@2x.jpg") no-repeat center -18px;
+      background-size: 320px auto;
+    }
+  }
+
+  @include tablet-desktop {
+    background: $snow url("../img/hero-bg-desktop.jpg") no-repeat center -65px;
+
+    @include retina2 {
+      background: $snow url("../img/hero-bg-desktop@2x.jpg") no-repeat center -65px;
+      background-size: 768px auto;
+    }
+  }
+
+  @include desktop {
+    background-position: center -73px;
+  }
 }
 
 .hero__container {
   display: flex;
   flex-direction: column;
+
+  @include desktop {
+    min-height: 670px;
+  }
 }
 
 .hero__title {
   flex-grow: 1;
   margin: 0;
-  padding: 80px 30px 120px;
+  padding: 72px 30px 120px;
   font-size: 27px;
   font-weight: 700;
   text-align: center;
@@ -28,6 +53,7 @@
   }
 
   @include desktop {
+    padding: 84px 30px 120px;
     font-size: 53px;
     line-height: 57px;
   }

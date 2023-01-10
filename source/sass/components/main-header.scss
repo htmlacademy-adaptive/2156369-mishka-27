@@ -2,15 +2,19 @@
   position: relative;
   min-height: 79px;
 
+  @include mobile {
+    box-shadow: 0 1px 0 #ececec, inset 0 1px 0 #ececec;
+  }
+
   @include desktop {
     min-height: 89px;
   }
 }
 
 .main-header__logo {
-  display: block;
-  padding: 22px 30px;
-  text-align: center;
+  display: inline-block;
+  padding: 22px 45px 18px;
+  box-sizing: border-box;
 
   @include tablet {
     position: absolute;
@@ -21,6 +25,27 @@
   @include desktop {
     position: absolute;
     left: 50%;
+    top: -13px;
     transform: translateX(-50%);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-header__image {
+  @include tablet {
+    width: 113px;
+    height: 46px;
+  }
+
+  @include desktop {
+    width: 149px;
+    height: 72px;
   }
 }

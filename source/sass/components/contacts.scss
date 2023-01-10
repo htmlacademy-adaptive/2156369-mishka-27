@@ -12,7 +12,7 @@
 
   @include desktop {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.6fr;
     grid-template-rows: repeat(2, min-content);
     column-gap: 23px;
     padding: 71px 50px 105px 224px;
@@ -97,6 +97,15 @@
     grid-column: 2 / -1;
     grid-row: 1 / -1;
     margin-bottom: 0;
+  }
+}
+
+.contacts__map-point {
+  border: none;
+  display: block;
+
+  @include tablet-desktop {
+    height: 457px;
   }
 }
 
