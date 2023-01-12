@@ -4,6 +4,9 @@ import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
+import htmlmin from 'gulp-htmlmin';
+import terser from 'gulp-terser';
+import squoosh from 'gulp-libsquoosh';
 
 // Styles
 
@@ -14,8 +17,43 @@ export const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
+}
+
+// HTML
+
+export const html = () => {
+  return gulp.src('source/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('build'));
+}
+
+// Scripts
+
+export const scripts = () => {
+  return gulp.src('source/js/*.js')
+    .pipe(terser())
+    .pipe(gulp.dest('build/js'));
+}
+
+// Images
+
+const optimizeImages = () => {
+  return gulp.src('source/img/**/*.{jpg,png}')
+    .pipe(squoosh())
+    .pipe(gulp.dest('build/img'))
+}
+
+export const copyImages = () => {
+  return gulp.src('source/img/**/*.{jpg,png}')
+    .pipe(gulp.dest('build/img'))
+}
+
+// WebP
+
+export const createWebp = () => {
+  return
 }
 
 // Server
@@ -23,7 +61,7 @@ export const styles = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -36,10 +74,11 @@ const server = (done) => {
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
+  gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html').on('change', browser.reload);
 }
 
 
 export default gulp.series(
-  styles, server, watcher
+  html, styles, server, watcher
 );
