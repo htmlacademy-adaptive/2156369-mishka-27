@@ -9,12 +9,42 @@
 }
 
 .features__link {
+  position: relative;
   display: block;
   padding: 24px 110px 31px 31px;
   color: $white;
   font-weight: 700;
   background-color: $downy;
   line-height: 24px;
+  transition: 0.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 62px;
+    top: 25%;
+    right: 37px;
+    background-repeat: no-repeat;
+    background-image: url("../img/sprite.svg#interior");
+  }
+
+  &:hover {
+    background-color: $color-downy;
+    transform: translateY(-5px);
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    background-color: $color-downy;
+
+    &::after {
+      opacity: 0.3;
+    }
+  }
 
   @include mobile {
     font-size: 19px;
@@ -32,12 +62,40 @@
     &:nth-child(2n) .features__link {
       background-color: $puerto-rico-dark;
     }
+
+    &:nth-child(2n) .features__link::after {
+      width: 60px;
+      height: 60px;
+      right: 27px;
+      top: 23%;
+      background-image: url("../img/sprite.svg#toy");
+    }
+
+    &:nth-child(2n) .features__link:hover,
+    &:nth-child(2n) .features__link:active {
+      background-color: $puerto-rico;
+    }
   }
 
   @include tablet-desktop {
     &:nth-child(4n-1) .features__link,
     &:nth-child(4n-2) .features__link {
       background-color: $puerto-rico-dark;
+    }
+
+    &:nth-child(4n-1) .features__link::after,
+    &:nth-child(4n-2) .features__link::after {
+      width: 60px;
+      height: 60px;
+      right: 33px;
+      top: 29%;
+      mask: url("../img/sprite.svg#toy");
+      background-color: #149080;
+    }
+
+    &:nth-child(4n-1) .features__link:hover,
+    &:nth-child(4n-2) .features__link:hover {
+      background-color: $puerto-rico;
     }
   }
 }

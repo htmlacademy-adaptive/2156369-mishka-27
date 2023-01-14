@@ -21,7 +21,7 @@
 
 .contacts__wrapper {
   padding: 0 30px 10px 29px;
-  margin-bottom: 62px;
+  margin-bottom: 52px;
 
   @include tablet {
     display: grid;
@@ -60,12 +60,16 @@
 .contacts__wrapper-email,
 .contacts__wrapper-address {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1.3fr 3fr;
   margin: 0;
 
   @include tablet {
     line-height: 30px;
   }
+}
+
+.contacts__wrapper-email {
+  margin-bottom: 30px;
 }
 
 .contacts__email {
@@ -87,7 +91,24 @@
 
   &:hover {
     color: $puerto-rico;
+
+    &::after {
+      background-color: $puerto-rico;
+    }
   }
+
+  &:active {
+    color: $puerto-rico;
+
+    &::after {
+      background-color: $puerto-rico;
+      opacity: 0.1;
+    }
+  }
+}
+
+.contacts__address {
+  font-style: normal;
 }
 
 .contacts__map {

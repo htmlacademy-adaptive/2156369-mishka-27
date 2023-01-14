@@ -17,11 +17,14 @@
 .review__author {
   margin: 0;
   font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
 }
 
 .review__contact {
   margin: 0;
   margin-bottom: 30px;
+  letter-spacing: 0.5px;
 
   @include tablet-desktop {
     margin: 0;
@@ -31,4 +34,44 @@
 .review__link {
   line-height: 30px;
   color: $charcoal;
+}
+
+.reviews__toggles {
+  display: flex;
+  margin-bottom: 37px;
+}
+
+.reviews__toggle {
+  position: relative;
+  box-sizing: border-box;
+  width: 50%;
+  min-height: 52px;
+  padding: 0;
+  background-color: $white;
+  border: 1px solid $whisper;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 50px;
+    height: 26px;
+    transform: translate(-50%);
+    mask: url("../img/sprite.svg#arrow-left");
+    background-color: $black;
+  }
+
+  &:hover::before {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &--next {
+    transform: rotate(180deg);
+  }
 }

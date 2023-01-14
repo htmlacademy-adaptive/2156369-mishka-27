@@ -19,6 +19,18 @@
 }
 
 .main-footer__logo {
+
+  justify-self: flex-start;
+
+  &:hover .main-footer__icon {
+    fill: $puerto-rico;
+  }
+
+  &:active .main-footer__icon {
+    fill: $puerto-rico;
+    opacity: 0.3;
+  }
+
   @include mobile {
     display: none;
   }
@@ -26,7 +38,18 @@
 
 .main-footer__social {
   @include mobile {
-    margin: 25px 0 28px;
+    position: relative;
+    margin: 23px 0 45px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 260px;
+      bottom: -26px;
+      left: -41px;
+      background-color: $whisper-color;
+    }
   }
 
   @include tablet-desktop {

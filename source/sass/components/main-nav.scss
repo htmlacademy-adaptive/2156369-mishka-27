@@ -216,12 +216,12 @@
     @include tablet-desktop {
       box-sizing: border-box;
       box-shadow: inset 1px 0 0 $whisper;
-      padding: 33px 0 33px 83px;
+      padding: 33px 0 32px 83px;
       font-size: 17px;
     }
 
     @include desktop {
-      padding: 33px 38px 33px 85px;
+      padding: 33px 38px 32px 85px;
     }
   }
 
@@ -238,7 +238,7 @@
     }
 
     @include desktop {
-      padding: 33px 35px 33px 35px;
+      padding: 33px 35px 32px;
       font-size: 17px;
     }
   }
@@ -251,6 +251,10 @@
 
   &:hover {
     color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:hover .main-nav__icon {
+    fill: $downy;
   }
 
   &:active {

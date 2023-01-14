@@ -1,11 +1,16 @@
 .options__item {
   display: grid;
   grid-template-columns: 38% 62%;
-  padding: 9px 0 12px;
+  padding: 9px 0 11px;
   font-size: 15px;
   line-height: 20px;
   color: $charcoal;
   border-bottom: 1px solid $whisper;
+
+  @include tablet {
+    grid-template-columns: 29% 71%;
+    padding-top: 8px;
+  }
 
   @include desktop {
     grid-template-columns: 34% 66%;

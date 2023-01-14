@@ -5,6 +5,10 @@
 .header-subject__container {
   padding: 73px 30px;
   text-align: center;
+
+  @include desktop {
+    padding: 30px 30px 92px;
+  }
 }
 
 .header-subject__title {
