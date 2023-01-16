@@ -1,5 +1,5 @@
 .form {
-  padding: 15px 30px 55px;
+  padding: 15px 30px 55px 27px;
 
   @include tablet-desktop {
     padding: 0;
@@ -9,22 +9,38 @@
 .form__group {
   display: flex;
   padding: 0;
+  margin: 0;
   border: none;
 
   @include mobile {
     flex-direction: column;
-  }
+    margin-bottom: 38px;
 
-  &:not(:last-child) {
-    @include mobile {
-      margin-bottom: 33px;
+    &:nth-child(2) .form__label:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 32px;
+    }
+
+    &:nth-child(5) {
+      margin-bottom: 34px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 3px;
     }
   }
 
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 50px;
+    padding: 67px 47px 65px 50px;
   }
 
   @include desktop {
@@ -40,6 +56,32 @@
       margin: 0;
       background-color: $white-smoke;
     }
+  }
+
+  &:nth-child(n + 3) .form__label {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3px;
+
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
+  }
+
+  &:nth-child(3) .form__title {
+    margin-bottom: 25px;
+  }
+
+  &:nth-child(4) .form__title {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(5) .form__title {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(6) .form__title {
+    margin-bottom: 20px;
   }
 }
 
@@ -58,15 +100,31 @@
 }
 
 .form__title {
-  padding-right: 10px;
-  margin: 0;
-  line-height: 16px;
+  position: relative;
+  margin: 0 0 32px;
+  line-height: 18px;
   font-weight: 700;
   color: $downy;
   text-transform: uppercase;
-  margin-bottom: 20px;
+
+  @include mobile {
+    display: inline-block;
+    padding-left: 4px;
+    padding-right: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 13px);
+      width: calc(100vw - 100% - 74px);
+      height: 1px;
+      background-color: $downy-dark;
+    }
+  }
 
   @include tablet-desktop {
+    padding: 0;
     float: left;
   }
 }
@@ -76,16 +134,171 @@
   flex-direction: column;
 }
 
+.form__label {
+  position: relative;
+  padding-left: 62px;
+
+  @include tablet {
+    padding-left: 81px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 7%;
+
+    @include tablet {
+      margin-bottom: 54px;
+    }
+  }
+}
+
+.form__checker {
+  @include visually-hidden;
+
+  + .form__mark {
+    position: absolute;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+    border: 2px solid $charcoal;
+    background-color: $white;
+  }
+
+  &[type="radio"] + .form__mark {
+    width: 42px;
+    height: 42px;
+    top: 44%;
+    left: 2px;
+    border-radius: 50%;
+
+    @include tablet-desktop {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &[type="radio"]:checked + .form__mark::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -50%);
+    background-color: $downy-dark;
+    border-radius: 50%;
+
+    @include tablet-desktop {
+      width: 23px;
+      height: 23px;
+    }
+  }
+
+  &[type="checkbox"] + .form__mark {
+    width: 38px;
+    height: 38px;
+    top: 44%;
+    left: 2px;
+    background-color: transparent;
+
+    @include tablet-desktop {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &[type="checkbox"]:checked + .form__mark {
+    background-image: url("../img/tick-checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    @include tablet-desktop {
+      background-size: 32px 22px;
+    }
+  }
+
+  &:hover + .form__mark {
+    border: 2px solid $downy-dark;
+  }
+
+  &:active + .form__mark {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+  }
+}
+
 .form__field {
+  padding: 17px 8px 16px 0;
+  border: none;
+  box-shadow: inset 0 -2px 0 $black;
+  background-color: transparent;
+  font-size: 17px;
+  color: $charcoal;
+
   &::placeholder {
+    font-size: 17px;
     line-height: 18px;
     opacity: 0.3;
+    letter-spacing: 0.5px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: inset 0 -2px 0 $downy-dark;
+
+    + .form__icon {
+      fill: $downy-dark;
+      opacity: 1;
+    }
+  }
+
+  &--icon {
+    padding-right: 40px;
+    padding-bottom: 18px;
+  }
+
+  &--phone::placeholder {
+    letter-spacing: -0.5px;
+  }
+
+  &--email {
+    padding-bottom: 16px;
+  }
+
+  &--text {
+    box-sizing: border-box;
+    min-height: 142px;
+    margin-left: 2px;
+    padding: 17px 8px 16px 18px;
+    border: 2px solid $charcoal;
+    box-shadow: none;
+    resize: none;
+    font-family: $font-family;
+
+    &::placeholder {
+      letter-spacing: 0;
+    }
+
+    &:hover {
+      border: 2px solid $downy-dark;
+      box-shadow: none;
+    }
+  }
+}
+
+.form__icon {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  opacity: 0.2;
+
+  &--mail {
+    top: 18px;
+    right: 3px;
   }
 }
 
 .form__text {
   line-height: 18px;
   font-weight: 700;
+  font-size: 17px;
 
   @include tablet-desktop {
     font-size: 19px;
@@ -93,6 +306,7 @@
 }
 
 .form__comment {
+  margin-bottom: 30px;
   font-size: 14px;
   line-height: 16px;
   color: $charcoal;
@@ -103,6 +317,7 @@
 
   @include mobile {
     flex-direction: column;
+    padding-left: 2px;
   }
 
   @include tablet-desktop {
@@ -117,4 +332,9 @@
   @include desktop {
     padding: 0 225px;
   }
+}
+
+.form__button {
+  padding-bottom: 14px;
+  letter-spacing: -0.5px;
 }

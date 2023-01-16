@@ -1,13 +1,43 @@
 .header-subject {
+  position: relative;
   background-color: $white-smoke;
+
+  @include tablet {
+    &::after {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 100%;
+      bottom: -14px;
+      left: 0;
+      background-image: url("../img/wave-tablet.svg");
+      background-repeat: repeat-x;
+    }
+  }
 }
 
 .header-subject__container {
-  padding: 73px 30px;
+  position: relative;
+  padding: 73px 30px 73px;
   text-align: center;
+
+  @include tablet {
+    padding: 36px 30px 72px;
+  }
 
   @include desktop {
     padding: 30px 30px 92px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 34px;
+      width: 1150px;
+      left: 0;
+      bottom: -20px;
+      background-image: url("../img/wave-desktop.svg");
+      background-repeat: repeat-x;
+    }
   }
 }
 

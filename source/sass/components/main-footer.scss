@@ -11,10 +11,14 @@
   }
 
   @include tablet-desktop {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.76fr 1fr 1fr;
     align-items: center;
     gap: 30px;
     padding: 50px 50px 58px;
+  }
+
+  @include tablet {
+    grid-template-columns: 0.64fr 1fr 1fr;
   }
 }
 
@@ -47,7 +51,6 @@
       height: 1px;
       width: 260px;
       bottom: -26px;
-      left: -41px;
       background-color: $whisper-color;
     }
   }

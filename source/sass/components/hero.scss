@@ -57,7 +57,7 @@
       width: 1150px;
       left: 0;
       bottom: -20px;
-      background-image: url("../img/wave-desktop.svg");
+      background-image: url("../img/wave-desktop-main.svg");
       background-repeat: repeat-x;
     }
   }
@@ -83,7 +83,7 @@
   }
 
   @include desktop {
-    padding: 84px 30px 120px;
+    padding: 84px 70px 120px;
     font-size: 53px;
     line-height: 57px;
   }

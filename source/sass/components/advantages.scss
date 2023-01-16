@@ -2,7 +2,7 @@
   padding: 32px 30px 29px;
 
   @include tablet {
-    padding: 52px 50px 83px;
+    padding: 58px 50px 83px;
   }
 
   @include desktop {
@@ -38,16 +38,18 @@
   margin: 0;
   list-style-type: none;
 
+  @media (min-width: 500px) and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
   @include tablet-desktop {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  @include tablet {
-    row-gap: 63px;
-  }
-
-  @include desktop {
+  @include tablet-desktop {
     row-gap: 55px;
   }
 }
@@ -94,7 +96,7 @@
 
   &--rocket {
     &::before {
-      top: 2px;
+      top: 3px;
       left: -5px;
       width: 55px;
       height: 23px;

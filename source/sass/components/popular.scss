@@ -2,30 +2,42 @@
   position: relative;
   padding: 31px 30px 41px;
 
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: repeat-x;
+  }
+
   @include mobile {
     &::after {
-      content: "";
-      position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 6px;
       background-image: url("../img/zigzag-line-phone.svg");
-      background-repeat: repeat-x;
     }
   }
 
   @include tablet {
     display: grid;
-    grid-template-columns: 50% 1fr 0.6fr;
+    grid-template-columns: 44% 1fr 0.7fr;
     grid-template-areas: "title title subtitle"
       "description img img"
       "list img img"
       "price img img"
       "button img img";
     row-gap: 28px;
+    column-gap: 40px;
     align-items: center;
-    padding: 55px 50px 52px;
+    padding: 55px 50px 67px;
+
+    &::after {
+      bottom: 0;
+      left: -5px;
+      width: 100%;
+      height: 17px;
+      background-image: url("../img/zigzag-line-tablet.svg");
+    }
   }
 
   @include desktop {
@@ -35,15 +47,12 @@
     padding: 75px 50px 96px;
 
     &::after {
-      content: "";
-      position: absolute;
       bottom: 0;
       left: 50px;
       width: calc(100% - 100px);
       height: 23px;
       background-image: url("../img/zigzag-line-desktop.svg");
       background-position: -55px center;
-      background-repeat: repeat-x;
     }
   }
 }
@@ -92,6 +101,7 @@
   @include tablet {
     grid-area: subtitle;
     margin: 0;
+    padding-right: 5px;
     line-height: 17px;
     letter-spacing: 0.1px;
     text-align: center;
@@ -117,7 +127,7 @@
   @include tablet {
     grid-area: description;
     margin: 0;
-    padding: 0 34px 0 0;
+    padding: 9px 0 0 0;
   }
 
   @include desktop {
@@ -138,6 +148,7 @@
   @include tablet {
     grid-area: list;
     margin: 0;
+    padding-top: 12px;
   }
 
   @include desktop {
@@ -158,6 +169,7 @@
   @include tablet {
     grid-area: img;
     margin: 0;
+    align-self: flex-end;
   }
 
   @include desktop {
@@ -184,7 +196,8 @@
   @include tablet {
     grid-area: price;
     margin: 0;
-    margin-right: 48px;
+    margin-right: 5px;
+    padding-top: 31px;
     letter-spacing: 0;
     font-size: 20px;
   }
@@ -202,6 +215,11 @@
 
   @include tablet-desktop {
     font-size: 17px;
+  }
+
+  @include tablet {
+    margin-top: 5px;
+    padding-bottom: 14px;
   }
 
   @include desktop {

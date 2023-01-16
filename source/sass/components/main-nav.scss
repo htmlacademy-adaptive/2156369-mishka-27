@@ -258,7 +258,8 @@
   }
 
   &:active {
-    color: rgba(0, 0, 0, 0.3);
+    fill: $downy;
+    opacity: 0.3;
   }
 }
 
@@ -268,10 +269,14 @@
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
-  left: 35px;
+  left: 31px;
 
   @include tablet {
-    left: 32px;
+    left: 31px;
+  }
+
+  @include desktop {
+    left: 34px;
   }
 }
 

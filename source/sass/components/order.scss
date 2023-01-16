@@ -1,6 +1,6 @@
 .order {
   @include tablet {
-    padding: 54px 0 50px;
+    padding: 69px 0 50px;
   }
 
   @include desktop {
@@ -10,7 +10,7 @@
 
 .order__text {
   margin: 0;
-  padding: 17px 30px 15px;
+  padding: 17px 30px 13px;
   color: $charcoal;
   font-size: 13px;
   line-height: 24px;

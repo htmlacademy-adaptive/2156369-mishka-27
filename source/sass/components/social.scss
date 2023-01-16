@@ -10,3 +10,14 @@
 .social__item:not(:last-child) {
   margin-right: 33px;
 }
+
+.social__link {
+  &:hover .social__icon {
+    fill: $puerto-rico;
+  }
+
+  &:active .social__icon {
+    fill: $puerto-rico;
+    opacity: 0.3;
+  }
+}

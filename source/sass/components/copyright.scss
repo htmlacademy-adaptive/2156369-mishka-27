@@ -12,4 +12,28 @@
   font-size: 19px;
   line-height: 18px;
   font-weight: 700;
+
+  @include desktop {
+    padding-bottom: 4px;
+  }
+}
+
+.copyright__link {
+  .copyright__icon {
+    fill: $downy;
+    padding-top: 3px;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &:hover .copyright__icon {
+    fill: $puerto-rico;
+  }
+
+  &:active .copyright__icon {
+    fill: $puerto-rico;
+    opacity: 0.3;
+  }
 }

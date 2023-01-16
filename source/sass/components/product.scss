@@ -2,11 +2,11 @@
   padding: 30px 30px 15px;
 
   @include tablet {
-    padding: 67px 50px 53px;
+    padding: 83px 50px 53px;
   }
 
   @include desktop {
-    padding: 111px 50px 57px;
+    padding: 132px 50px 57px;
   }
 }
 
@@ -34,19 +34,33 @@
 }
 
 .product__item {
+  display: grid;
+
+  &:hover .product__content {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active .product__content {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+
   @include mobile {
+    grid-template-rows: min-content 1fr;
     max-width: 260px;
   }
 
   @include tablet {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
   }
 
   &:not(:last-child) {
     @include tablet {
       margin-bottom: 54px;
     }
+  }
+
+  @include desktop {
+    grid-template-rows: min-content 1fr;
   }
 }
 
@@ -55,13 +69,31 @@
 }
 
 .product__content {
-  padding: 27px 28px 26px;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  padding: 27px 27px 26px;
   border: 1px solid $whisper;
+
+  @include tablet {
+    padding: 27px 33px 26px 32px;
+  }
+
+  @include desktop {
+    padding: 27px 31px 24px 27px;
+  }
 }
 
 .product__link {
   margin: 0 auto;
   color: inherit;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .product__title {
@@ -86,6 +118,11 @@
   @include tablet {
     font-size: 15px;
   }
+
+  @include desktop {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
 }
 
 .product__order {
@@ -103,5 +140,20 @@
 
   @include tablet {
     font-size: 17px;
+  }
+
+  @include desktop {
+    letter-spacing: 1px;
+  }
+}
+
+.product__icon {
+  &:hover {
+    fill: $downy;
+  }
+
+  &:active {
+    fill: $downy;
+    opacity: 0.3;
   }
 }
