@@ -34,5 +34,3 @@ orderButton.onclick = function(e) {
   e.preventDefault();
   indexModal.classList.toggle('modal--closed');
 }
-
-
