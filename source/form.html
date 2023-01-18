@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Форма заказа</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensans.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff" as="font" crossorigin="anonymous">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
@@ -95,7 +99,7 @@
           <fieldset class="form__group form__group--color">
             <div class="form__container container">
               <legend class="form__title">Цвет</legend>
-              <div class="form__labels-wrapper">
+              <div class="form__labels-wrapper form__labels-wrapper--grid">
                 <label class="form__label">
                   <input class="form__checker" type="checkbox" name="color" value="white" checked>
                   <span class="form__mark"></span>
@@ -151,7 +155,7 @@
               <legend class="form__title">Тел</legend>
               <label class="form__label">
                 <span class="visually-hidden">Укажите ваш телефон.</span>
-                <input class="form__field form__field--icon form__field--phone" type="text" name="phone" placeholder="+7 ХХХ ХХХ ХХ ХХ*" required>
+                <input class="form__field form__field--icon form__field--phone" type="tel" name="phone" placeholder="+7 ХХХ ХХХ ХХ ХХ*" required>
                 <svg class="form__icon" width="25" height="24" aria-hidden="true" focusable="false">
                   <use href="../img/sprite.svg#phone" />
                 </svg>
@@ -163,7 +167,7 @@
               <legend class="form__title">e-mail</legend>
               <label class="form__label">
                 <span class="visually-hidden">Укажите ваш e-mail.</span>
-                <input class="form__field form__field--icon form__field--email" type="text" name="email" placeholder="Ваш Email*" required>
+                <input class="form__field form__field--icon form__field--email" type="email" name="email" placeholder="Ваш Email*" required>
                 <svg class="form__icon form__icon--mail" width="32" height="21" aria-hidden="true" focusable="false">
                   <use href="../img/sprite.svg#mail" />
                 </svg>

@@ -3,7 +3,7 @@
   min-height: 79px;
 
   @include mobile {
-    box-shadow: 0 1px 0 #ececec, inset 0 1px 0 #ececec;
+    box-shadow: 0 1px 0 $whisper, inset 0 1px 0 $whisper;
   }
 
   @include desktop {

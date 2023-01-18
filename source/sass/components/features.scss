@@ -90,7 +90,7 @@
       right: 33px;
       top: 29%;
       mask: url("../img/sprite.svg#toy");
-      background-color: #149080;
+      background-color: $dark-cyan;
     }
 
     &:nth-child(4n-1) .features__link:hover,

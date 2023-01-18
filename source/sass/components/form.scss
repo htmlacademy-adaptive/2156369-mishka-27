@@ -9,7 +9,6 @@
 .form__group {
   display: flex;
   padding: 0;
-  margin: 0;
   border: none;
 
   @include mobile {
@@ -39,14 +38,59 @@
 
   @include tablet {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    padding: 67px 47px 65px 50px;
+    grid-template-columns: 24.5% 75%;
+    padding: 67px 50px 65px 50px;
+
+    &:nth-child(3) {
+      padding: 51px 47px 53px 50px;
+    }
+
+    &:nth-child(3) .form__title {
+      margin-top: 16px;
+    }
+
+    &:nth-child(4) .form__container {
+      padding: 47px 50px 0;
+    }
+
+    &:nth-child(5) .form__container {
+      padding: 22px 50px 50px;
+    }
+
+    &:nth-child(6) {
+      padding: 50px 48px 52px 50px;
+    }
   }
 
   @include desktop {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    padding: 50px 225px 50px 97px;
+    grid-template-columns: 13.6% 86.4%;
+    padding: 79px 225px 63px 112px;
+
+    &:nth-child(2) .form__container {
+      display: grid;
+      grid-template-columns: 112px 789px;
+      padding: 65px 111px 12px;
+    }
+
+    &:nth-child(3) {
+      padding: 50px 225px 53px 112px;
+    }
+
+    &:nth-child(4) .form__container,
+    &:nth-child(5) .form__container {
+      display: grid;
+      grid-template-columns: 112px 702px;
+      padding: 47px 111px 0;
+    }
+
+    &:nth-child(5) .form__container {
+      padding: 22px 111px 50px;
+    }
+
+    &:nth-child(6) {
+      padding: 49px 225px 49px 112px;
+    }
   }
 
   &--color {
@@ -60,8 +104,15 @@
 
   &:nth-child(n + 3) .form__label {
     display: flex;
-    flex-direction: column;
     padding-left: 3px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include tablet-desktop {
+      align-items: center;
+    }
 
     &:not(:last-child) {
       margin-bottom: 21px;
@@ -70,18 +121,38 @@
 
   &:nth-child(3) .form__title {
     margin-bottom: 25px;
+
+    @include desktop {
+      margin-top: 18px;
+    }
   }
 
   &:nth-child(4) .form__title {
     margin-bottom: 0;
+
+    @include tablet {
+      margin-top: 17px;
+    }
+
+    @include desktop {
+      margin-top: 19px;
+    }
   }
 
   &:nth-child(5) .form__title {
     margin-bottom: 0;
+
+    @include tablet-desktop {
+      margin-top: 18px;
+    }
   }
 
   &:nth-child(6) .form__title {
     margin-bottom: 20px;
+
+    @include tablet-desktop {
+      margin-top: 19px;
+    }
   }
 }
 
@@ -89,14 +160,14 @@
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 50px;
+    padding: 64px 50px 11px;
   }
 
-  @include desktop {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    padding: 50px 225px 50px 97px;
-  }
+  // @include desktop {
+  //   display: grid;
+  //   grid-template-columns: 1fr 5fr;
+  //   padding: 50px 225px 50px 97px;
+  // }
 }
 
 .form__title {
@@ -125,6 +196,7 @@
 
   @include tablet-desktop {
     padding: 0;
+    margin-bottom: 0;
     float: left;
   }
 }
@@ -132,6 +204,18 @@
 .form__labels-wrapper {
   display: flex;
   flex-direction: column;
+
+  &--grid {
+    @include tablet {
+      display: grid;
+      grid-template-columns: 52% 48%;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 263px);
+    }
+  }
 }
 
 .form__label {
@@ -145,9 +229,13 @@
   &:not(:last-child) {
     margin-bottom: 7%;
 
-    @include tablet {
+    @include tablet-desktop {
       margin-bottom: 54px;
     }
+  }
+
+  @include desktop {
+    padding-left: 83px;
   }
 }
 
@@ -172,6 +260,10 @@
     @include tablet-desktop {
       width: 52px;
       height: 52px;
+    }
+
+    @include tablet {
+      left: 5px;
     }
   }
 
@@ -203,6 +295,15 @@
       width: 52px;
       height: 52px;
     }
+
+    @include tablet {
+      top: 10px;
+      left: 0;
+    }
+
+    @include desktop {
+      top: 9px;
+    }
   }
 
   &[type="checkbox"]:checked + .form__mark {
@@ -231,12 +332,21 @@
   background-color: transparent;
   font-size: 17px;
   color: $charcoal;
+  flex-grow: 1;
+
+  @include tablet-desktop {
+    padding-left: 16px;
+  }
 
   &::placeholder {
     font-size: 17px;
     line-height: 18px;
     opacity: 0.3;
     letter-spacing: 0.5px;
+
+    @include tablet-desktop {
+      font-size: 19px;
+    }
   }
 
   &:hover,
@@ -252,6 +362,10 @@
   &--icon {
     padding-right: 40px;
     padding-bottom: 18px;
+
+    @include tablet-desktop {
+      padding-right: 80px;
+    }
   }
 
   &--phone::placeholder {
@@ -289,9 +403,17 @@
   right: 5px;
   opacity: 0.2;
 
+  @include tablet {
+    right: 26px;
+  }
+
   &--mail {
     top: 18px;
     right: 3px;
+
+    @include tablet {
+      right: 22px;
+    }
   }
 }
 
@@ -303,6 +425,10 @@
   @include tablet-desktop {
     font-size: 19px;
   }
+
+  @include tablet-desktop {
+    padding-right: 27px;
+  }
 }
 
 .form__comment {
@@ -310,6 +436,12 @@
   font-size: 14px;
   line-height: 16px;
   color: $charcoal;
+
+  @include tablet-desktop {
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+  }
 }
 
 .form__submit {
@@ -323,6 +455,7 @@
   @include tablet-desktop {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
   }
 
   @include tablet {
@@ -335,6 +468,10 @@
 }
 
 .form__button {
-  padding-bottom: 14px;
+  padding: 15px 29px 14px;
   letter-spacing: -0.5px;
+
+  @include tablet-desktop {
+    margin-right: 30px;
+  }
 }

@@ -28,7 +28,7 @@
   width: 40px;
   cursor: pointer;
   border: none;
-  background-color: #ffffff;
+  background-color: $white;
 
   @include tablet-desktop {
     display: none;
@@ -43,8 +43,8 @@
     right: 7px;
     width: 20px;
     height: 2px;
-    background-color: #231f20;
-    box-shadow: 0 6px 0 0 #231f20, 0 12px 0 0 #231f20;
+    background-color: $aubergine;
+    box-shadow: 0 6px 0 0 $aubergine, 0 12px 0 0 $aubergine;
   }
 
   .main-nav__wrapper {
@@ -66,7 +66,7 @@
       right: 7px;
       width: 28px;
       height: 2px;
-      background-color: #000000;
+      background-color: $black;
     }
 
     &::before {
@@ -259,7 +259,7 @@
 
   &:active {
     fill: $downy;
-    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.3);
   }
 }
 
