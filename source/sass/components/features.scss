@@ -11,12 +11,28 @@
 .features__link {
   position: relative;
   display: block;
-  padding: 24px 110px 31px 31px;
+  padding: 23px 110px 31px 31px;
   color: $white;
   font-weight: 700;
   background-color: $downy;
   line-height: 24px;
-  transition: 0.5s;
+  transition: 0.3s;
+  transition-duration: easy;
+
+  &::before {
+    @include mobile {
+      bottom: 0;
+    }
+
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background-color: inherit;
+  }
 
   &::after {
     content: "";
@@ -38,12 +54,23 @@
     }
   }
 
+  &:hover::before {
+    @include mobile {
+      bottom: -5px;
+    }
+  }
+
   &:active {
     background-color: $color-downy;
 
     &::after {
       opacity: 0.3;
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $black;
+    outline-offset: -6px;
   }
 
   @include mobile {

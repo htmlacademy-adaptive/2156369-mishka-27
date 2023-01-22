@@ -13,24 +13,14 @@ navToggle.addEventListener('click', function () {
   }
 });
 
-// модалка в каталоге
+// модалка
 
-let catalogModal = document.querySelector('.modal');
-let productButton = document.querySelectorAll('.product__button');
+let modal = document.querySelector('.modal');
+let modalOpeners = document.querySelectorAll('.product__button, .popular__button');
 
-for(let productButtons of productButton) {
-  productButtons.onclick = function(e) {
-    e.preventDefault();
-    catalogModal.classList.toggle('modal--closed');
-  }
-}
-
-// Модалка на главной
-
-let indexModal = document.querySelector('.modal');
-let orderButton = document.querySelector('.popular__button');
-
-orderButton.onclick = function(e) {
-  e.preventDefault();
-  indexModal.classList.toggle('modal--closed');
+for(const opener of modalOpeners) {
+  opener.onclick = function(evt) {
+    evt.preventDefault();
+    modal.classList.toggle('modal--closed');
+  };
 }

@@ -46,3 +46,25 @@
     @content;
   }
 }
+
+// @mixin background-webp ($image, $ext) {
+//   @supports (background-image: "#{image}.webp") {
+//     background-image: "#{image}.webp";
+//   }
+
+//   @supports not (background-image: $webp) {
+//     background-image: "#{image}.#{ext}";
+//   }
+// }
+
+// @mixin background ($image, $ext: "jpg") {
+//   background-repeat: no-repeat;
+
+//   @include background-webp("../img/#{$image}", $ext);
+
+//   @if $retina {
+//     @include retina2 {
+//       @include background-webp("../img/#{$image}@2x", $ext);
+//     }
+//   }
+// }

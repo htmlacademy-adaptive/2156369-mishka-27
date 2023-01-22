@@ -12,6 +12,7 @@
   text-transform: uppercase;
   border: 2px solid $charcoal;
   cursor: pointer;
+  transition: 0.5s;
 
   &:hover {
     background-color: $charcoal;
@@ -29,5 +30,10 @@
     background-color: $downy;
     border: none;
     cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: $downy;
   }
 }

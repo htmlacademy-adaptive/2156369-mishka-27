@@ -4,10 +4,19 @@
 
 .main-footer__container {
   display: grid;
+  position: relative;
 
   @include mobile {
     justify-content: center;
     padding: 5px 30px 32px;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 260px;
+      order: 2;
+      background-color: $whisper-color;
+    }
   }
 
   @include tablet-desktop {
@@ -35,24 +44,23 @@
     opacity: 0.3;
   }
 
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
+
   @include mobile {
     display: none;
   }
 }
 
+.main-footer__icon {
+  transition: 0.5s;
+}
+
 .main-footer__social {
   @include mobile {
-    position: relative;
-    margin: 23px 0 45px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      height: 1px;
-      width: 260px;
-      bottom: -26px;
-      background-color: $whisper-color;
-    }
+    margin: 14px 0 16px;
+    order: 1;
   }
 
   @include tablet-desktop {
@@ -62,4 +70,9 @@
 
 .main-footer__copyright {
   margin: 0;
+  order: 3;
+
+  @include mobile {
+    margin-top: 17px;
+  }
 }

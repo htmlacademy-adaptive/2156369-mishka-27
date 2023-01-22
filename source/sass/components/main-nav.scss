@@ -33,6 +33,10 @@
   @include tablet-desktop {
     display: none;
   }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
 }
 
 .main-nav--closed {
@@ -260,6 +264,11 @@
   &:active {
     fill: $downy;
     color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+    outline-offset: -2px;
   }
 }
 

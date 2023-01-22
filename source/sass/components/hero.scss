@@ -3,7 +3,7 @@
   min-height: 400px;
 
   @include mobile {
-    background: $snow url("../img/hero-bg.jpg") no-repeat center -18px;
+    background: $snow url("../img/hero-bg.webp") no-repeat center -18px;
 
     @include retina2 {
       background: $snow url("../img/hero-bg@2x.jpg") no-repeat center -18px;
@@ -11,16 +11,24 @@
     }
   }
 
-  @include tablet {
-    &::after {
+  &::after {
+    @include tablet-desktop {
       content: "";
       position: absolute;
       height: 24px;
-      width: 100%;
-      bottom: -14px;
+      bottom: -13px;
       left: 0;
-      background-image: url("../img/wave-tablet.svg");
+      right: 0;
+      background-image: url("../img/sprite.svg#white-wave");
       background-repeat: repeat-x;
+      background-size: 770px 24px;
+    }
+
+    @include desktop {
+      height: 34px;
+      bottom: -18px;
+      left: 10px;
+      background-size: 1250px 37px;
     }
   }
 
@@ -49,17 +57,6 @@
 
   @include desktop {
     min-height: 670px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      height: 34px;
-      width: 1150px;
-      left: 0;
-      bottom: -20px;
-      background-image: url("../img/wave-desktop-main.svg");
-      background-repeat: repeat-x;
-    }
   }
 }
 

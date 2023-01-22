@@ -11,7 +11,7 @@ import terser from 'gulp-terser';
 import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
 import { stacksvg } from 'gulp-stacksvg';
-import {deleteAsync as del} from 'del';
+import { deleteAsync as del } from 'del';
 
 // Styles
 
@@ -47,7 +47,7 @@ const scripts = () => {
 // Images
 
 const optimizeImages = () => {
-  return gulp.src(['source/img/**/*.{jpg,png}', '!source/img/favicons/*.{jpg,png}'])
+  return gulp.src('source/img/**/*.{jpg,png}')
     .pipe(squoosh())
     .pipe(gulp.dest('build/img'))
 }
@@ -132,38 +132,30 @@ const watcher = () => {
   gulp.watch('source/img/icon/*.svg', gulp.series(buildSprite, reload));
 }
 
+const compile = gulp.parallel(
+  copy,
+  styles,
+  html,
+  scripts,
+  svg,
+  buildSprite,
+  createWebp
+);
+
 // Build
 
 export const build = gulp.series(
   clean,
-  copy,
   optimizeImages,
-  gulp.parallel(
-    styles,
-    html,
-    scripts,
-    svg,
-    buildSprite,
-    createWebp
-  ),
+  compile
 );
 
 // Default
 
 export default gulp.series(
   clean,
-  copy,
   copyImages,
-  gulp.parallel(
-    styles,
-    html,
-    scripts,
-    svg,
-    buildSprite,
-    createWebp
-  ),
-  gulp.series(
-    server,
-    watcher
-  )
+  compile,
+  server,
+  watcher
 );

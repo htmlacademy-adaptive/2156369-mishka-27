@@ -1,6 +1,7 @@
 .copyright {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @include tablet-desktop {
     justify-self: end;
@@ -13,8 +14,13 @@
   line-height: 18px;
   font-weight: 700;
 
+  @include tablet {
+    margin-bottom: 8px;
+  }
+
   @include desktop {
-    padding-bottom: 4px;
+    margin-right: 30px;
+    padding-bottom: 9px;
   }
 }
 
@@ -35,5 +41,9 @@
   &:active .copyright__icon {
     fill: $puerto-rico;
     opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
   }
 }

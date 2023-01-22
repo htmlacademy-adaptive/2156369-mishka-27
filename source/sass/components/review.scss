@@ -42,4 +42,8 @@
 .review__link {
   line-height: 30px;
   color: $charcoal;
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
 }
