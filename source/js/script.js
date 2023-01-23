@@ -18,8 +18,8 @@ navToggle.addEventListener('click', function () {
 let modal = document.querySelector('.modal');
 let modalOpeners = document.querySelectorAll('.product__button, .popular__button');
 
-for(const opener of modalOpeners) {
-  opener.onclick = function(evt) {
+for (const opener of modalOpeners) {
+  opener.onclick = function (evt) {
     evt.preventDefault();
     modal.classList.toggle('modal--closed');
   };

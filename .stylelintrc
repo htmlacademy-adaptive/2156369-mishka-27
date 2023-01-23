@@ -1,6 +1,18 @@
 {
   "extends": "stylelint-config-htmlacademy",
   "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "content",
+          "if",
+          "include",
+          "mixin",
+          "rules"
+        ]
+      }
+    ],
     "declaration-no-important": true,
     "indentation": [
       2,

@@ -73,7 +73,6 @@
   grid-template-rows: 1fr min-content;
   padding: 27px 27px 26px;
   border: 1px solid $whisper;
-  transition: 0.5s;
 
   @include tablet {
     padding: 27px 33px 26px 32px;

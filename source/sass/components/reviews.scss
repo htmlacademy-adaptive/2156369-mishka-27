@@ -50,13 +50,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    background-image: url("../img/review-bg.webp");
-    background-repeat: no-repeat;
     background-size: 350px auto;
 
-    @include retina2 {
-      background-image: url("../img/review-bg@2x.jpg");
-    }
+    @include background("review-bg");
   }
 }
 
