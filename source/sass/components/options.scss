@@ -1,7 +1,28 @@
 .options__item {
-  padding: 5px 0;
+  display: grid;
+  grid-template-columns: 38% 62%;
+  padding: 9px 0 11px;
   font-size: 15px;
   line-height: 20px;
   color: $charcoal;
   border-bottom: 1px solid $whisper;
+
+  @include tablet {
+    grid-template-columns: 33% 67%;
+    padding-top: 8px;
+  }
+
+  @include desktop {
+    grid-template-columns: 27% 73%;
+    padding-top: 8px;
+    column-gap: 18px;
+  }
+}
+
+.options__title {
+  padding-right: 15px;
+}
+
+.options__description {
+  margin: 0;
 }

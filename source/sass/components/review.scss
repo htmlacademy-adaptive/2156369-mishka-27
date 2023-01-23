@@ -7,21 +7,32 @@
 
   @include tablet {
     margin-bottom: 61px;
+    font-size: 17px;
   }
 
   @include desktop {
     margin-bottom: 44px;
+    font-size: 17px;
   }
 }
 
 .review__author {
   margin: 0;
   font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+
+  @include tablet {
+    font-size: 18px;
+    letter-spacing: 0;
+    margin-bottom: 3px;
+  }
 }
 
 .review__contact {
   margin: 0;
   margin-bottom: 30px;
+  letter-spacing: 0.5px;
 
   @include tablet-desktop {
     margin: 0;
@@ -31,4 +42,8 @@
 .review__link {
   line-height: 30px;
   color: $charcoal;
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
 }

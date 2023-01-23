@@ -1,8 +1,8 @@
 .advantages {
-  padding: 31px 30px 29px;
+  padding: 32px 30px 29px;
 
   @include tablet {
-    padding: 52px 50px 83px;
+    padding: 58px 50px 83px;
   }
 
   @include desktop {
@@ -38,32 +38,108 @@
   margin: 0;
   list-style-type: none;
 
+  @media (min-width: 500px) and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
   @include tablet-desktop {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  @include tablet {
-    column-gap: 70px;
-    row-gap: 63px;
-  }
-
-  @include desktop {
-    column-gap: 85px;
-    row-gap: 57px;
+  @include tablet-desktop {
+    row-gap: 55px;
   }
 }
 
 .advantages__item {
+  position: relative;
   font-weight: 700;
 
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+
+  &--flower {
+    &::before {
+      top: 0;
+      left: 9px;
+      width: 33px;
+      height: 38px;
+      background-image: url("../img/sprite.svg#advantage-flower");
+    }
+  }
+
+  &--ball {
+    &::before {
+      top: 2px;
+      left: 2px;
+      width: 35px;
+      height: 34px;
+      background-image: url("../img/sprite.svg#advantage-ball");
+    }
+  }
+
+  &--money {
+    &::before {
+      top: 0;
+      left: 0;
+      width: 47px;
+      height: 27px;
+      background-image: url("../img/sprite.svg#advantage-money");
+    }
+  }
+
+  &--rocket {
+    &::before {
+      top: 3px;
+      left: -5px;
+      width: 55px;
+      height: 23px;
+      background-image: url("../img/sprite.svg#advantage-rocket");
+    }
+  }
+
+  &--heart {
+    &::before {
+      top: 5px;
+      left: 6px;
+      width: 34px;
+      height: 27px;
+      background-image: url("../img/sprite.svg#advantage-heart");
+    }
+  }
+
+  &--box {
+    &::before {
+      top: 2px;
+      left: 3px;
+      width: 33px;
+      height: 32px;
+      background-image: url("../img/sprite.svg#advantage-box");
+    }
+  }
+
   @include mobile {
+    padding-top: 54px;
+    font-size: 17px;
     line-height: 20px;
+    margin-bottom: 29px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include tablet-desktop {
     font-size: 20px;
     line-height: 22px;
+    padding-top: 56px;
+    padding-right: 20px;
 
     &--flower {
       order: 1;

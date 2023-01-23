@@ -1,6 +1,7 @@
 .copyright {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @include tablet-desktop {
     justify-self: end;
@@ -12,4 +13,37 @@
   font-size: 19px;
   line-height: 18px;
   font-weight: 700;
+
+  @include tablet {
+    margin-bottom: 8px;
+  }
+
+  @include desktop {
+    margin-right: 30px;
+    padding-bottom: 9px;
+  }
+}
+
+.copyright__link {
+  .copyright__icon {
+    fill: $downy;
+    padding-top: 3px;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &:hover .copyright__icon {
+    fill: $puerto-rico;
+  }
+
+  &:active .copyright__icon {
+    fill: $puerto-rico;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
 }

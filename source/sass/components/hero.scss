@@ -1,17 +1,69 @@
 .hero {
+  position: relative;
   min-height: 400px;
-  background: $snow url("../img/hero-bg.jpg") no-repeat center top;
+
+  @include mobile {
+    background: $snow url("../img/hero-bg.webp") no-repeat center -18px;
+
+    @include retina2 {
+      background: $snow url("../img/hero-bg@2x.jpg") no-repeat center -18px;
+      background-size: 320px auto;
+    }
+  }
+
+  &::after {
+    @include tablet-desktop {
+      content: "";
+      position: absolute;
+      height: 24px;
+      bottom: -13px;
+      left: 0;
+      right: 0;
+      background-image: url("../img/sprite.svg#white-wave");
+      background-repeat: repeat-x;
+      background-size: 770px 24px;
+    }
+
+    @include desktop {
+      height: 34px;
+      bottom: -18px;
+      left: 10px;
+      background-size: 1250px 37px;
+    }
+  }
+
+  @include tablet-desktop {
+    background: $snow url("../img/hero-bg-desktop.jpg") no-repeat center -65px;
+
+    @include retina2 {
+      background: $snow url("../img/hero-bg-desktop@2x.jpg") no-repeat center -65px;
+      background-size: 768px auto;
+    }
+  }
+
+  @include desktop {
+    background-position: center -73px;
+  }
 }
 
 .hero__container {
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  @include tablet {
+    min-height: 678px;
+  }
+
+  @include desktop {
+    min-height: 670px;
+  }
 }
 
 .hero__title {
   flex-grow: 1;
   margin: 0;
-  padding: 80px 30px 120px;
+  padding: 72px 30px 120px;
   font-size: 27px;
   font-weight: 700;
   text-align: center;
@@ -28,6 +80,7 @@
   }
 
   @include desktop {
+    padding: 84px 70px 120px;
     font-size: 53px;
     line-height: 57px;
   }

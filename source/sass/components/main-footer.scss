@@ -4,29 +4,63 @@
 
 .main-footer__container {
   display: grid;
+  position: relative;
 
   @include mobile {
     justify-content: center;
-    padding: 25px 30px 32px;
+    padding: 5px 30px 32px;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 260px;
+      order: 2;
+      background-color: $whisper-color;
+    }
   }
 
   @include tablet-desktop {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.76fr 1fr 1fr;
     align-items: center;
     gap: 30px;
     padding: 50px 50px 58px;
   }
+
+  @include tablet {
+    grid-template-columns: 0.64fr 1fr 1fr;
+  }
 }
 
 .main-footer__logo {
+
+  justify-self: flex-start;
+
+  &:hover .main-footer__icon {
+    fill: $puerto-rico;
+  }
+
+  &:active .main-footer__icon {
+    fill: $puerto-rico;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+  }
+
   @include mobile {
     display: none;
   }
 }
 
+.main-footer__icon {
+  transition: 0.5s;
+}
+
 .main-footer__social {
   @include mobile {
-    margin: 25px 0 28px;
+    margin: 14px 0 16px;
+    order: 1;
   }
 
   @include tablet-desktop {
@@ -36,4 +70,9 @@
 
 .main-footer__copyright {
   margin: 0;
+  order: 3;
+
+  @include mobile {
+    margin-top: 17px;
+  }
 }

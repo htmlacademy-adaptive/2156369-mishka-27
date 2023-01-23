@@ -1,4 +1,5 @@
 .radio-button__text {
+  box-sizing: border-box;
   display: inline-block;
   padding: 18px 22px;
   min-height: 52px;
@@ -8,6 +9,11 @@
   border: 2px solid rgba($charcoal, 0.1);
   text-align: center;
   cursor: pointer;
+
+  @include tablet-desktop {
+    min-width: 112px;
+    padding: 17px 22px 15px;
+  }
 }
 
 .radio-button__input {

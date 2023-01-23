@@ -1,13 +1,44 @@
 .header-subject {
+  position: relative;
   background-color: $white-smoke;
+
+  &::after {
+    @include tablet-desktop {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 100%;
+      bottom: -14px;
+      left: 0;
+      background-image: url("../img/sprite.svg#white-wave");
+      background-repeat: repeat-x;
+      background-size: 770px 24px;
+    }
+
+    @include desktop {
+      height: 34px;
+      bottom: -20px;
+      background-size: 1150px 34px;
+    }
+  }
 }
 
 .header-subject__container {
-  padding: 73px 41px;
+  position: relative;
+  padding: 73px 30px 73px;
   text-align: center;
+
+  @include tablet {
+    padding: 36px 30px 72px;
+  }
+
+  @include desktop {
+    padding: 30px 30px 92px;
+  }
 }
 
 .header-subject__title {
+  margin: 0;
   font-size: 27px;
   line-height: 30px;
   font-weight: 700;

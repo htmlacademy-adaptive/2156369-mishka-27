@@ -1,23 +1,59 @@
 .popular {
-  padding: 31px 30px 36px;
+  position: relative;
+  padding: 31px 30px 41px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: repeat-x;
+    background-image: url("../img/sprite.svg#zigzag");
+  }
+
+  @include mobile {
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-size: 320px 6px;
+    }
+  }
 
   @include tablet {
     display: grid;
-    grid-template-columns: 50% 1fr 0.5fr;
+    grid-template-columns: 44% 1fr 0.7fr;
     grid-template-areas: "title title subtitle"
       "description img img"
       "list img img"
       "price img img"
       "button img img";
-    gap: 42px;
-    padding: 40px 50px 52px;
+    row-gap: 28px;
+    column-gap: 40px;
+    align-items: center;
+    padding: 55px 50px 67px;
+
+    &::after {
+      bottom: 0;
+      left: -5px;
+      width: 100%;
+      height: 17px;
+      background-size: 772px 17px;
+    }
   }
 
   @include desktop {
     display: grid;
     grid-template-columns: 175px 292px 1fr 525px;
     grid-template-rows: repeat(5, min-content);
-    padding: 54px 50px 73px;
+    padding: 75px 50px 96px;
+
+    &::after {
+      bottom: 0;
+      left: 50px;
+      width: calc(100% - 100px);
+      height: 23px;
+      background-position: -55px center;
+    }
   }
 }
 
@@ -26,9 +62,11 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 700;
+  margin-bottom: 5px;
 
   @include tablet {
     grid-area: title;
+    margin: 0;
     font-size: 43px;
     line-height: 50px;
   }
@@ -37,7 +75,7 @@
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     margin-top: 61px;
-    margin-bottom: 35px;
+    margin-bottom: 36px;
     z-index: 2;
     font-size: 53px;
     line-height: 57px;
@@ -47,39 +85,58 @@
 .popular__subtitle {
   margin: 0;
   margin-bottom: 17px;
+  font-size: 17px;
   line-height: 20px;
   font-weight: 700;
   color: $downy;
   text-transform: uppercase;
 
+  @include mobile {
+    br {
+      display: none;
+    }
+  }
+
   @include tablet {
     grid-area: subtitle;
+    margin: 0;
+    padding-right: 5px;
     line-height: 17px;
+    letter-spacing: 0.1px;
+    text-align: center;
   }
 
   @include desktop {
     grid-column: 1 / 2;
     margin-top: 70px;
+    padding-right: 12px;
     line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.1px;
   }
 }
 
 .popular__description {
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 17px;
   font-size: 15px;
   color: $charcoal;
+  line-height: 24px;
 
   @include tablet {
     grid-area: description;
     margin: 0;
-    font-size: 17px;
-    line-height: 30px;
+    padding: 9px 0 0 0;
   }
 
   @include desktop {
     grid-column: 2 / 3;
-    margin-bottom: 60px;
+    margin-bottom: 53px;
+  }
+
+  @include tablet-desktop {
+    font-size: 17px;
+    line-height: 30px;
   }
 }
 
@@ -90,6 +147,7 @@
   @include tablet {
     grid-area: list;
     margin: 0;
+    padding-top: 12px;
   }
 
   @include desktop {
@@ -98,8 +156,8 @@
   }
 }
 
-.popular__image {
-  margin-bottom: 26px;
+.popular__images {
+  margin-bottom: 27px;
 
   @include mobile {
     display: block;
@@ -110,36 +168,57 @@
   @include tablet {
     grid-area: img;
     margin: 0;
+    align-self: flex-end;
   }
 
   @include desktop {
     grid-column: 4 / -1;
     grid-row: 1 / -1;
+    margin-bottom: 0;
   }
+}
+
+.popular__image {
+  display: block;
+  margin: 0 auto;
 }
 
 .popular__price {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   font-weight: 700;
   color: $charcoal;
   text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 24px;
 
   @include tablet {
     grid-area: price;
     margin: 0;
+    margin-right: 5px;
+    padding-top: 31px;
+    letter-spacing: 0;
     font-size: 20px;
   }
 
   @include desktop {
     grid-column: 2 / 3;
-    margin-bottom: 33px;
+    margin-bottom: 32px;
+    font-size: 20px;
+    letter-spacing: 0.1px;
   }
 }
 
 .popular__button {
+  padding: 15px 20px;
+
   @include tablet-desktop {
     font-size: 17px;
+  }
+
+  @include tablet {
+    margin-top: 5px;
+    padding-bottom: 14px;
   }
 
   @include desktop {

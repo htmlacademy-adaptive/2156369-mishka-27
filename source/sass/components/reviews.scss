@@ -1,21 +1,62 @@
 .reviews {
   position: relative;
-  padding: 29px 30px 45px;
+  padding: 29px 30px 51px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: repeat-x;
+    background-image: url("../img/sprite.svg#zigzag");
+  }
+
+  @include mobile {
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-size: 320px 6px;
+    }
+  }
 
   @include tablet {
-    padding: 82px 50px 47px;
-    gap: 38px;
+    padding: 79px 50px 132px;
+    gap: 41px;
+
+    &::after {
+      bottom: 0;
+      left: -5px;
+      width: 100%;
+      height: 17px;
+      background-size: 772px 17px;
+    }
   }
 
   @include desktop {
-    padding: 78px 50px 96px 224px;
+    padding: 78px 50px 186px 224px;
     gap: 35px;
+    background-position: 50px 0;
+
+    &::after {
+      bottom: 0;
+      left: 50px;
+      width: calc(100% - 100px);
+      height: 23px;
+      background-position: -55px center;
+    }
   }
 
   @include tablet-desktop {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    background-image: url("../img/review-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 350px auto;
+
+    @include retina2 {
+      background-image: url("../img/review-bg@2x.jpg");
+    }
   }
 }
 
@@ -50,23 +91,82 @@
 }
 
 .reviews__toggles {
+  display: flex;
+  margin-bottom: 37px;
+
   @include tablet-desktop {
     position: absolute;
     right: 50px;
   }
 
   @include tablet {
-    bottom: 47px;
+    bottom: 25%;
+    margin-bottom: 0;
   }
 
   @include desktop {
-    bottom: 96px;
+    bottom: 35%;
+    margin-bottom: 0;
   }
 }
 
-.reviews__button {
+.reviews__toggle {
+  position: relative;
+  box-sizing: border-box;
+  width: 50%;
+  min-height: 52px;
+  padding: 0;
+  background-color: $white;
+  border: 1px solid $whisper;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 50px;
+    height: 26px;
+    transform: translate(-50%);
+    mask: url("../img/sprite.svg#arrow-left");
+    background-color: $black;
+  }
+
+  &:hover::before {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $downy-dark;
+    outline-offset: -1px;
+  }
+
+  &--next {
+    transform: rotate(180deg);
+  }
+
   @include tablet-desktop {
-    padding: 16px 30px;
+    min-width: 87px;
+    border: none;
+  }
+}
+
+
+.reviews__button {
+  @include tablet {
+    padding: 13px 36px;
+  }
+
+  @include desktop {
+    padding: 16px 36px 13px 35px;
+    align-self: start;
+  }
+
+  @include tablet-desktop {
     margin-bottom: 0;
     grid-column: 2 / -1;
     grid-row: 1 / 2;
