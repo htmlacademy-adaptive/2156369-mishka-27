@@ -1,14 +1,13 @@
 .hero {
   position: relative;
   min-height: 400px;
+  background-color: $snow;
 
   @include mobile {
-    background: $snow url("../img/hero-bg.webp") no-repeat center -18px;
+    background-size: 320px auto;
+    background-position: center -18px;
 
-    @include retina2 {
-      background: $snow url("../img/hero-bg@2x.jpg") no-repeat center -18px;
-      background-size: 320px auto;
-    }
+    @include background("hero-bg");
   }
 
   &::after {
@@ -33,12 +32,9 @@
   }
 
   @include tablet-desktop {
-    background: $snow url("../img/hero-bg-desktop.jpg") no-repeat center -65px;
+    background-position: center -65px;
 
-    @include retina2 {
-      background: $snow url("../img/hero-bg-desktop@2x.jpg") no-repeat center -65px;
-      background-size: 768px auto;
-    }
+    @include background("hero-bg-desktop");
   }
 
   @include desktop {

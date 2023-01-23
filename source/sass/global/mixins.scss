@@ -47,24 +47,24 @@
   }
 }
 
-// @mixin background-webp ($image, $ext) {
-//   @supports (background-image: "#{image}.webp") {
-//     background-image: "#{image}.webp";
-//   }
+@mixin background-webp ($image, $ext) {
+  @supports (background-image: "#{image}.webp") {
+    background-image: url("../img/#{$image}.webp");
+  }
 
-//   @supports not (background-image: $webp) {
-//     background-image: "#{image}.#{ext}";
-//   }
-// }
+  @supports not (background-image: "#{image}.webp") {
+    background-image: url("../img/#{$image}.#{$ext}");
+  }
+}
 
-// @mixin background ($image, $ext: "jpg") {
-//   background-repeat: no-repeat;
+@mixin background ($image, $ext: "jpg", $retina: true) {
+  background-repeat: no-repeat;
 
-//   @include background-webp("../img/#{$image}", $ext);
+  @include background-webp("../img/#{$image}", $ext);
 
-//   @if $retina {
-//     @include retina2 {
-//       @include background-webp("../img/#{$image}@2x", $ext);
-//     }
-//   }
-// }
+  @if $retina {
+    @include retina2 {
+      @include background-webp("../img/#{$image}@2x", $ext);
+    }
+  }
+}
