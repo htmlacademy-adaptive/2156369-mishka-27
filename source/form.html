@@ -25,9 +25,7 @@
             <img class="main-header__image" src="img/logo-phone.svg" width="86" height="35" alt="Магазин MISHKA.">
           </picture>
         </a>
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню.</span>
-        </button>
+        <button class="main-nav__toggle" type="button" aria-label="Открыть главное меню."></button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__site-list main-nav__site-list--dark">
             <li class="main-nav__item">
@@ -169,9 +167,11 @@
           </div>
           <fieldset class="form__group container form__group--text">
             <legend class="form__title">Доп</legend>
-            <span class="visually-hidden">Опишите все ваши пожелания к заказу.</span>
-            <textarea class="form__field form__field--text" name="comment"
-              placeholder="Опишите все ваши пожелания к заказу"></textarea>
+            <label class="form__label">
+              <span class="visually-hidden">Опишите все ваши пожелания к заказу.</span>
+              <textarea class="form__field form__field--text" name="comment"
+                placeholder="Опишите все ваши пожелания к заказу"></textarea>
+            </label>
           </fieldset>
           <div class="form__submit container">
             <p class="form__comment">*Поля обязательны для заполнения</p>
